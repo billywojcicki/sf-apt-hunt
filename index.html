@@ -137,6 +137,10 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
 .tag.bad{background:var(--bad-soft);border-color:transparent;color:var(--bad)}
 .tag.q{border-style:dashed;color:var(--muted);background:transparent}
 .note{font-size:13.5px;color:var(--muted);margin:0;max-width:70ch}
+.more{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.moretoggle{display:none;align-self:flex-start;border:0;background:none;padding:2px 0;font-size:13px;font-weight:600;color:var(--accent);cursor:pointer;align-items:center;gap:4px}
+.moretoggle::after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px)}
+.card.open .moretoggle::after{transform:rotate(-135deg) translate(-1px,-1px)}
 .via{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);letter-spacing:.03em;margin-top:auto}
 
 /* tracking */
@@ -225,9 +229,30 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
 }
 @media (max-width:560px){
   .card,.card.notrack{grid-template-columns:minmax(0,1fr)}
-  .media{min-height:180px;border-right:0;border-bottom:1px solid var(--line)}
-  .headrow{flex-direction:column}
-  .price{text-align:left}
+  .list{gap:10px}
+  .media{min-height:0;height:118px;border-right:0;border-bottom:1px solid var(--line)}
+  .media.hasphoto .mini{width:70px;height:70px;right:8px;bottom:8px}
+  .media .num{top:8px;left:8px}
+  .main{padding:11px 13px;gap:5px}
+  .headrow{align-items:center;gap:10px}
+  .movein{padding:4px 10px 4px 8px;gap:8px;border-width:1px}
+  .movein .cal{display:none}
+  .movein .dt{font-size:19px}
+  .movein .fit{font-size:11.5px;max-width:9em;line-height:1.25}
+  .price b{font-size:18px}
+  h3{font-size:17px;margin:2px 0 0}
+  .sub{font-size:12.5px}
+  .specs{font-size:12px}
+  .chips{gap:4px}
+  .tag{font-size:11.5px;padding:1px 8px}
+  .moretoggle{display:inline-flex}
+  .more{display:none}
+  .card.open .more{display:flex}
+  .track{padding:10px 12px;gap:8px}
+  .seg{gap:5px}
+  .seg button{padding:6px 2px;font-size:12.5px}
+  .nonotes{display:none}
+  .rocap{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -366,7 +391,7 @@ var AREAS=[
   {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-10T23:06:32Z", RUNS=[];
+var BUILT="2026-10-10T23:10:35Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
 
@@ -515,13 +540,18 @@ function card(x,n){
   if(has(x,"verify"))ch.appendChild(tag("Double-check details","warn"));
   if(has(x,"edge"))ch.appendChild(tag("Walk the block first","warn"));
   m.appendChild(ch);
-  if(x.n)m.appendChild(el("p","note",x.n));
+  var tg=el("button","moretoggle","Details"); tg.type="button"; tg.setAttribute("aria-expanded","false");
+  tg.addEventListener("click",function(){var o=c.classList.toggle("open"); tg.setAttribute("aria-expanded",String(o)); tg.textContent=o?"Hide details":"Details"});
+  m.appendChild(tg);
+  var more=el("div","more");
+  if(x.n)more.appendChild(el("p","note",x.n));
   var dl=["Via "+x.src];
   dl.push(x.posted?"listed "+fmtDate(x.posted,true):"listing date not shown");
   if(x.updated)dl.push("updated "+fmtDate(x.updated,true)); else if(x.updNote)dl.push("updated "+x.updNote);
   if(x.firstSeen)dl.push("found "+fmtDate(x.firstSeen));
   if(x.lastSeen)dl.push("last checked "+fmtDate(x.lastSeen));
-  m.appendChild(el("div","via",dl.join(" · ")));
+  more.appendChild(el("div","via",dl.join(" · ")));
+  m.appendChild(more);
   c.appendChild(m);
 
   var ro=(mode==="local");
