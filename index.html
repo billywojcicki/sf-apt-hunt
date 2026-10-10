@@ -97,6 +97,8 @@ details.sec[open]>summary h2::before{content:"\2212  "}
 .empty{color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:18px}
 
 /* card */
+.ro .trackonly,.roonly{display:none}.ro .roonly{display:block}
+.ro .card{grid-template-columns:220px minmax(0,1fr)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:220px minmax(0,1fr) 300px;overflow:hidden;scroll-margin-top:80px;transition:box-shadow .3s}
 .card.flash{box-shadow:0 0 0 3px var(--accent)}
 .card.dim .media,.card.dim .main{opacity:.5}
@@ -187,7 +189,7 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
   .refreshed{text-align:left}
 }
 @media (max-width:560px){
-  .card{grid-template-columns:minmax(0,1fr)}
+  .card,.ro .card{grid-template-columns:minmax(0,1fr)}
   .media{min-height:180px;border-right:0;border-bottom:1px solid var(--line)}
   .headrow{flex-direction:column}
   .price{text-align:left}
@@ -205,10 +207,10 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
     <div>
       <p class="eyebrow">San Francisco · move-in Dec 15 to Feb 1</p>
       <h1>SF Apartment Hunt</h1>
-      <p class="crit">1BR or bigger, 600+ ft², laundry in unit or building, $6,000 max. North Beach, Russian Hill, Marina, Pac Heights, Nob Hill and Hayes Valley first; Mission, Potrero and SoMa if the place is right.</p>
+      <p class="crit">1BR or bigger, 600+ ft², laundry in unit or building, $6,000 max. North Beach, Telegraph Hill, Russian Hill, Marina, Cow Hollow, Pac Heights, Nob Hill and Hayes Valley first. Also NoPa, Japantown, Presidio and Laurel Heights, Lower Haight, Cole Valley, Duboce, Castro, Noe Valley, Mission, Potrero, and SoMa if the place is right.</p>
     </div>
     <div class="top-actions">
-      <button class="btn" id="open-sources" type="button" aria-haspopup="dialog">Sources <span id="src-count" class="sub"></span></button>
+      <button class="btn" id="open-sources" type="button" aria-haspopup="dialog">Sources and areas <span id="src-count" class="sub"></span></button>
       <div class="refreshed" id="refreshed"></div>
     </div>
   </header>
@@ -219,8 +221,10 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
       <div class="statgrid">
         <div class="stat win"><b id="st-win">0</b><span>in your Dec 15 to Feb 1 window</span></div>
         <div class="stat"><b id="st-unk">0</b><span>with no move-in date listed</span></div>
-        <div class="stat"><b id="st-sent">0</b><span>contacted</span></div>
-        <div class="stat"><b id="st-notes">0</b><span>notes written</span></div>
+        <div class="stat trackonly"><b id="st-sent">0</b><span>contacted</span></div>
+        <div class="stat trackonly"><b id="st-notes">0</b><span>notes written</span></div>
+        <div class="stat roonly"><b id="st-after">0</b><span>just after your window</span></div>
+        <div class="stat roonly"><b id="st-src">0</b><span>sites searched</span></div>
       </div>
       <div class="legend">
         <span><i style="background:var(--win)"></i>In window</span>
@@ -256,12 +260,14 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
 <div class="scrim" id="scrim" hidden></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
   <button class="btn close" id="close-sources" type="button">Close</button>
-  <h2 id="drawer-title">Sources</h2>
-  <p class="sub">Every site searched, how many listings came from it, and what was skipped on purpose.</p>
+  <h2 id="drawer-title">Sources and areas</h2>
+  <p class="sub">Every site searched, how many listings came from it, what was skipped on purpose, and which neighborhoods are in or out.</p>
   <h4>Searched</h4>
   <div style="overflow-x:auto"><table class="srcs" id="src-table"><thead><tr><th>Source</th><th style="text-align:right">Found</th><th style="text-align:right">On page now</th></tr></thead><tbody></tbody></table></div>
   <h4>Not searched, and why</h4>
   <ul class="skip" id="skip-list"></ul>
+  <h4>Neighborhoods</h4>
+  <ul class="skip" id="area-list"></ul>
   <h4>Left out by rule</h4>
   <ul class="skip" id="rule-list"></ul>
 </aside>
@@ -304,6 +310,13 @@ var RULES=[
   ["Outside San Francisco","Mill Valley, Oakland and others that Craigslist mislabels as SF neighborhoods."]
 ];
 
+var AREAS=[
+  ["Top picks","North Beach, Telegraph Hill, Russian Hill, Marina, Cow Hollow, Pacific Heights, Lower Pac Heights, Nob Hill (north of Bush), Hayes Valley (west of Gough)."],
+  ["Also included","NoPa, Alamo Square, Japantown, Presidio Heights, Laurel Heights, Lower Haight, Cole Valley, Duboce Triangle, Castro, Noe Valley, Dolores Heights, the Mission west of Valencia, Potrero Hill, Dogpatch."],
+  ["Included, lower priority","SoMa south of Folsom (South Park, Design District), Rincon Hill, South Beach, Mission Bay. Safe and convenient, but quieter at night and less of a neighborhood feel."],
+  ["Left out: street homelessness and drug activity","Tenderloin, Civic Center and UN Plaza, Mid-Market and 6th St, the Tendernob (south of Bush, east of Larkin), Hayes Valley east of Gough near Van Ness, and the 16th St and 24th St BART plazas and Mission St corridor."],
+  ["Left out: other reasons","Union Square and FiDi (empty at night), Chinatown (few units that fit), Haight-Ashbury's Haight St strip, Inner Richmond and Inner Sunset (your call), and outer neighborhoods that are less walkable to where you want to be."]
+];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
 
@@ -459,6 +472,7 @@ function card(x,n){
   m.appendChild(el("div","via",dl.join(" · ")));
   c.appendChild(m);
 
+  if(mode==="local"){return c}
   var t=el("div","track");
   var seg=el("div","seg"); seg.setAttribute("role","group"); seg.setAttribute("aria-label","Tracking for "+x.a+" (each can be on or off)");
   [["want","Contact"],["sent","Contacted"],["pass","Pass"]].forEach(function(p){
@@ -523,6 +537,8 @@ function render(){
   var active=L.filter(function(x){return !x.gone&&fit(x)!=="early"});
   document.getElementById("st-win").textContent=active.filter(function(x){return fit(x)==="in"}).length;
   document.getElementById("st-unk").textContent=active.filter(function(x){return fit(x)==="unk"}).length;
+  document.getElementById("st-after").textContent=active.filter(function(x){var k=fit(x);return k==="after"||k==="late"}).length;
+  document.getElementById("st-src").textContent=SOURCES.length;
   document.getElementById("st-sent").textContent=Object.keys(TRK).filter(function(k){return norm(TRK[k]).sent}).length;
   document.getElementById("st-notes").textContent=Object.keys(TRK).reduce(function(s,k){return s+((TRK[k]&&TRK[k].notes)||[]).length},0);
   document.getElementById("count").textContent=shown.length+" shown";
@@ -542,6 +558,8 @@ function renderSources(){
   document.getElementById("src-count").textContent="· "+SOURCES.length+" searched";
   var sk=document.getElementById("skip-list"); sk.innerHTML="";
   SKIPPED.forEach(function(s){var li=el("li");li.appendChild(el("b",null,s[0]));li.appendChild(el("span",null,s[1]));sk.appendChild(li)});
+  var al=document.getElementById("area-list"); al.innerHTML="";
+  AREAS.forEach(function(s){var li=el("li");li.appendChild(el("b",null,s[0]));li.appendChild(el("span",null,s[1]));al.appendChild(li)});
   var rl=document.getElementById("rule-list"); rl.innerHTML="";
   RULES.forEach(function(s){var li=el("li");li.appendChild(el("b",null,s[0]));li.appendChild(el("span",null,s[1]));rl.appendChild(li)});
 }
@@ -573,7 +591,8 @@ render();
     db.doc("meta/run").onSnapshot(function(d){meta=d.exists?d.data():null;render()},function(){});
     return;
   }
-  mode="local"; TRK=localLoad();
+  mode="local"; TRK={}; document.documentElement.classList.add("ro");
+  document.getElementById("foot").textContent="A read-only copy of the apartment search, updated after each refresh. Facts come from each listing page on the date it was found; confirm with the landlord before applying or paying anything.";
   try{
     var r=await Promise.all([fetch("data/listings.json",{cache:"no-store"}),fetch("data/meta.json",{cache:"no-store"})]);
     L=await r[0].json(); meta=await r[1].json(); loaded=true;
