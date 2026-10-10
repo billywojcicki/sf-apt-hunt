@@ -1,0 +1,187 @@
+[
+ {
+  "approx": true,
+  "at": "2026-10-10T22:40:00Z",
+  "goneCount": 1,
+  "newCount": 0,
+  "sources": [
+   {
+    "d": "Craigslist answers \"Your request has been blocked\" after heavy searching earlier in the day. Photos and posting dates for Craigslist listings were not fetched.",
+    "n": "Craigslist",
+    "st": "blocked"
+   },
+   {
+    "d": "Returned HTTP 403 after 21 of 179 buildings in the late-January sweep. Nothing new qualified (2000 Post had a Jan 14 unit, but it's 475 ft\u00b2).",
+    "n": "Apartments.com",
+    "st": "blocked"
+   },
+   {
+    "d": "Photos and listing dates for 6 listings. 1900 Vallejo turned out to be available Aug 20 (now hidden); 1624 Vallejo's listing dates to 2021 (flagged).",
+    "n": "Zumper",
+    "st": "ok"
+   },
+   {
+    "d": "Photo for 318 Main St.",
+    "n": "Compass",
+    "st": "ok"
+   },
+   {
+    "d": "EM Invest: photo, and Jan 1 confirmed for 252 9th St.",
+    "n": "Property manager sites",
+    "st": "ok"
+   },
+   {
+    "d": "Mapped 17 of 18 addresses; Cervantes at Avila placed by hand.",
+    "n": "OpenStreetMap geocoder",
+    "st": "ok"
+   }
+  ],
+  "summary": "No new qualifying listings. Craigslist and Apartments.com are blocking the browser.",
+  "title": "Photos, maps, dates and late-January sweep"
+ },
+ {
+  "approx": true,
+  "at": "2026-10-10T19:30:00Z",
+  "goneCount": 18,
+  "newCount": 1,
+  "sources": [
+   {
+    "d": "Rechecked 34 saved posts (18 taken down) and scanned about 380 new posts.",
+    "n": "Craigslist",
+    "st": "ok"
+   }
+  ],
+  "summary": "1 new listing in window (2055 Sacramento, Dec 22). 18 Craigslist posts taken down.",
+  "title": "Refresh and recheck"
+ },
+ {
+  "approx": true,
+  "at": "2026-10-10T16:00:00Z",
+  "goneCount": 0,
+  "newCount": 11,
+  "sources": [
+   {
+    "d": "About 300 posts scanned for December and January dates.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Per-unit dates found for several big buildings (Dec 3 to Jan 31).",
+    "n": "Apartments.com",
+    "st": "ok"
+   },
+   {
+    "d": "Jan 1 sublets found; left out because they're furnished short-term.",
+    "n": "SabbaticalHomes and FurnishedFinder",
+    "st": "ok"
+   },
+   {
+    "d": "Page reads timed out waiting on permission prompts; no pages read.",
+    "n": "Property manager sites",
+    "st": "failed"
+   },
+   {
+    "d": "Neighborhood pages timed out waiting on permission prompts.",
+    "n": "Zumper",
+    "st": "failed"
+   },
+   {
+    "d": "Timed out waiting on permission prompts.",
+    "n": "HotPads",
+    "st": "failed"
+   }
+  ],
+  "summary": "11 new listings. Two places confirmed for Jan 1 (Chestnut St condo, 1720 Clay St).",
+  "title": "Refresh for Dec 15 to Jan 15"
+ },
+ {
+  "approx": true,
+  "at": "2026-10-02T03:00:00Z",
+  "goneCount": 0,
+  "newCount": 76,
+  "sources": [
+   {
+    "d": "About 180 posts checked in target neighborhoods.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Neighborhood and building pages read.",
+    "n": "Zumper",
+    "st": "ok"
+   },
+   {
+    "d": "Rental detail pages read.",
+    "n": "Compass",
+    "st": "ok"
+   },
+   {
+    "d": "Building availability for Greystar, Wilsey, Brick+Timber, Mosser and others.",
+    "n": "RentCafe",
+    "st": "ok"
+   },
+   {
+    "d": "Listing index pages worked; AppFolio unit pages were blocked, so some sizes and laundry details are missing.",
+    "n": "Property manager sites",
+    "st": "partial"
+   },
+   {
+    "d": "Rate-limited (HTTP 429) after a few dozen pages.",
+    "n": "Redfin",
+    "st": "partial"
+   },
+   {
+    "d": "Unit pages worked; search pages showed no units.",
+    "n": "RentSFNow",
+    "st": "partial"
+   },
+   {
+    "d": "Search pages thin; detail pages worked.",
+    "n": "Apartments.com",
+    "st": "ok"
+   },
+   {
+    "d": "Mostly rooms and tiny studios; nothing kept.",
+    "n": "HotPads",
+    "st": "ok"
+   },
+   {
+    "d": "Only a handful of SoMa listings; nothing kept.",
+    "n": "Trulia",
+    "st": "ok"
+   },
+   {
+    "d": "Listings load by script; nothing readable.",
+    "n": "Veritas / GreenTree",
+    "st": "failed"
+   },
+   {
+    "d": "Building sites show no unit availability.",
+    "n": "Trinity Properties",
+    "st": "failed"
+   },
+   {
+    "d": "Search page returned not found.",
+    "n": "Apartment List",
+    "st": "failed"
+   },
+   {
+    "d": "Bot protection page (Access denied).",
+    "n": "Zillow",
+    "st": "blocked"
+   },
+   {
+    "d": "Blocks automated access.",
+    "n": "Realtor.com",
+    "st": "blocked"
+   },
+   {
+    "d": "Site forbids automated access.",
+    "n": "Rent.com",
+    "st": "blocked"
+   }
+  ],
+  "summary": "Found 76 listings across Craigslist, Zumper, Compass, RentCafe and about 25 property manager sites.",
+  "title": "First search"
+ }
+]
