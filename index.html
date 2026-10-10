@@ -360,13 +360,14 @@ var SOURCES=[
   {name:"Redfin",re:/Redfin/i,how:"Neighborhood rental search.",note:"Started rate-limiting after a few dozen pages."},
   {name:"Relisto",re:/Relisto/i,how:"Rental listings; most were already rented."},
   {name:"RentSFNow (GreenTree)",re:/RentSFNow/i,how:"Building and unit pages."},
+  {name:"Building watchlist",re:/Building site/i,how:"Leasing sites for buildings you're watching (Chorus, The Brady, and Mission Bay buildings), read directly for exact units, prices and move-in dates."},
   {name:"Property manager sites",re:/EM Invest|Sutro|Chandler|Progressive|Bay Property|Tower Rents|Vesta|2B Living|AMSI|Amore|Jimenez|Golden Gate Properties|Housing Guild/i,how:"Listing pages for about 25 SF managers: Sutro, Chandler, Progressive, EM Invest, Bay Property Group, Tower Rents, Vesta, 2B Living, AMSI, Amore, Gaetani, Golden Gate Properties and more."},
   {name:"HotPads",re:/HotPads/i,how:"Neighborhood search.",note:"Results were mostly single rooms and tiny studios."},
   {name:"Trulia",re:/Trulia/i,how:"City rental search.",note:"Only a handful of SoMa listings, with no move-in dates."},
   {name:"SabbaticalHomes and FurnishedFinder",re:/Sabbatical|FurnishedFinder/i,how:"Searched for Jan 1 starts.",note:"Found several, all furnished short-term sublets. Left out because you want a lease."}
 ];
 var SKIPPED=[
-  ["Zillow","Its bot protection blocks automated browsing, and I don't get around CAPTCHAs or bot checks. Worth checking yourself in the app."],
+  ["Zillow","Its bot protection blocks automated browsing, and I don't get around CAPTCHAs or bot checks. Big buildings are read from their own leasing sites instead, which gives exact units and dates. For small landlords who only post on Zillow, a saved search with alerts in the Zillow app covers the gap."],
   ["Realtor.com","Blocks automated access."],
   ["Rent.com","The site forbids automated access."],
   ["Apartment List","The search page I tried came back as not found; not retried yet."],
@@ -388,10 +389,10 @@ var AREAS=[
   {k:"in",tag:"Included",t:"Also good",a:["NoPa","Alamo Square","Japantown","Presidio Heights","Laurel Heights","Lower Haight","Cole Valley","Duboce Triangle","Castro","Noe Valley","Dolores Heights","Mission (west of Valencia)","Potrero Hill","Dogpatch"],w:"Real neighborhood feel and easy to walk. A few corners see some street activity: Market at Castro, Haight at Fillmore, and Valencia near 16th."},
   {k:"in",tag:"Included",t:"Farther out, still good",a:["Inner Richmond","Inner Sunset","Bernal Heights","Glen Park"],w:"Great main streets (Clement, Irving, Cortland, Diamond) and little homelessness. Longer trips downtown, and the Richmond and Sunset are foggier."},
   {k:"low",tag:"Included, lower priority",t:"Newer high-rise areas",a:["SoMa (south of Folsom)","Rincon Hill","South Beach","Mission Bay"],w:"Safe and convenient, with lots of parking and in-unit laundry, but quiet at night and less of a neighborhood feel."},
-  {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated."},
+  {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated. Exception: managed buildings you put on the watchlist, like Chorus and The Brady at Market and Van Ness."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-10T23:19:41Z", RUNS=[];
+var BUILT="2026-10-10T23:34:07Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
 

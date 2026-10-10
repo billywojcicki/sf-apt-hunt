@@ -1,5 +1,40 @@
 [
  {
+  "approx": false,
+  "at": "2026-10-10T23:50:00Z",
+  "goneCount": 1,
+  "newCount": 2,
+  "sources": [
+   {
+    "d": "25 units listed; latest start date Dec 6 (2BR, $7,313). No unit in your window yet.",
+    "n": "Chorus (rentchorus.com, SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Floor plans and prices read; the site doesn't show move-in dates or laundry.",
+    "n": "The Brady (thebradysf.com)",
+    "st": "partial"
+   },
+   {
+    "d": "Bot protection; big buildings are read from their own leasing sites instead.",
+    "n": "Zillow",
+    "st": "skipped"
+   },
+   {
+    "d": "Giving the block a day to clear.",
+    "n": "Craigslist",
+    "st": "skipped"
+   },
+   {
+    "d": "Giving the block a day to clear.",
+    "n": "Apartments.com",
+    "st": "skipped"
+   }
+  ],
+  "summary": "Added Chorus and The Brady from their own leasing sites. Neither shows a unit starting Dec 15 or later yet. Dropped 318 Main St as stale.",
+  "title": "Watchlist buildings added"
+ },
+ {
   "approx": true,
   "at": "2026-10-10T22:40:00Z",
   "goneCount": 1,

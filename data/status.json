@@ -63,5 +63,18 @@
   "sent": true,
   "sentOn": "2026-10-10",
   "want": false
+ },
+ "powell-st-near-bay-top-floor": {
+  "want": false,
+  "sent": false,
+  "pass": true,
+  "sentOn": "",
+  "passOn": "2026-10-10",
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "The wall between bedroom and living room does not reach the ceiling"
+   }
+  ]
  }
 }
