@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="SF apartments for a Jan 1 move-in: 1BR+, 600+ sq ft, laundry, under $6,000.">
+<title>SF Apartment Hunt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column listing ledger, filter bar on top, each listing a compact row card grouped by area tier */
+:root{
+  --bg:#f3f5f6; --surface:#ffffff; --fg:#17202a; --muted:#5d6b78; --line:#d9e0e5;
+  --accent:#1f5f8b; --accent-soft:#e3eef6;
+  --good:#24724a; --good-soft:#e2f2e9; --warn:#9a6a10; --warn-soft:#fbf0d9; --bad:#a63a2e; --bad-soft:#f8e3df;
+  --f-display:"Archivo",system-ui,sans-serif; --f-label:"Archivo Narrow","Arial Narrow",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11171c; --surface:#182129; --fg:#e6ecf0; --muted:#93a3b0; --line:#2a3640;
+  --accent:#7db8e0; --accent-soft:#1d3346;
+  --good:#7fd1a2; --good-soft:#173527; --warn:#e8c06a; --warn-soft:#3a2f14; --bad:#f09a8d; --bad-soft:#3d1f1b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11171c; --surface:#182129; --fg:#e6ecf0; --muted:#93a3b0; --line:#2a3640;
+  --accent:#7db8e0; --accent-soft:#1d3346;
+  --good:#7fd1a2; --good-soft:#173527; --warn:#e8c06a; --warn-soft:#3a2f14; --bad:#f09a8d; --bad-soft:#3d1f1b; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-display);font-size:14px;line-height:1.45}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+h1{font-size:clamp(26px,4vw,36px);font-weight:700;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0;max-width:68ch}
+.brief{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:22px 0}
+.brief div{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-width:0}
+.brief b{display:block;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);font-weight:600;margin-bottom:4px}
+.brief p{margin:0}
+.brief .key{border-color:var(--warn);background:var(--warn-soft)}
+.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters label{font-family:var(--f-label);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+select,.chip{font:inherit;font-size:13px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+select:focus-visible,.chip:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{margin-left:auto;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+h2{font-size:15px;font-weight:600;margin:26px 0 8px;display:flex;gap:10px;align-items:baseline}
+h2 small{font-family:var(--f-label);font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.list{display:grid;gap:8px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;display:grid;grid-template-columns:118px minmax(0,2.2fr) minmax(0,1.2fr) minmax(0,1.5fr) auto;gap:6px 18px;align-items:start}
+.mv{border-radius:6px;padding:8px 10px;background:var(--bg);border:1px solid var(--line);display:flex;flex-direction:column;gap:2px;min-width:0}
+.mv .lbl{font-family:var(--f-label);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mv .dt{font-family:var(--f-display);font-weight:700;font-size:22px;line-height:1.1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.mv .fit{font-family:var(--f-label);font-size:11.5px;font-weight:600;letter-spacing:.03em}
+.mv .raw{font-size:11.5px;color:var(--muted);line-height:1.3}
+.mv.in{background:var(--good-soft);border-color:var(--good)}.mv.in .fit,.mv.in .dt{color:var(--good)}
+.mv.close{background:var(--warn-soft);border-color:var(--warn)}.mv.close .fit,.mv.close .dt{color:var(--warn)}
+.mv.early .dt,.mv.early .fit{color:var(--muted)}
+.mv.unk{border-style:dashed}.mv.unk .dt,.mv.unk .fit{color:var(--muted)}
+.row.dim{opacity:.5}
+.addr{font-weight:600;font-size:15px}
+.addr a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.addr a:hover{border-color:var(--accent);color:var(--accent)}
+.hood{color:var(--muted);font-size:13px}
+.note{color:var(--muted);font-size:12.5px;margin-top:4px}
+.nums{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:13px}
+.rent{font-size:16px;font-weight:500}
+.nums .s{color:var(--muted);font-size:12px}
+.facts{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-family:var(--f-label);font-size:11.5px;letter-spacing:.03em;padding:2px 8px;border-radius:4px;background:var(--accent-soft);color:var(--fg);white-space:nowrap}
+.tag.good{background:var(--good-soft);color:var(--good)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.tag.q{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.status{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.status button{font:inherit;font-family:var(--f-label);font-size:11.5px;letter-spacing:.03em;padding:3px 8px;border-radius:4px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.status button[aria-pressed="true"][data-s="want"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.status button[aria-pressed="true"][data-s="sent"]{background:var(--good);border-color:var(--good);color:var(--bg)}
+.status button[aria-pressed="true"][data-s="pass"]{background:var(--muted);border-color:var(--muted);color:var(--bg)}
+.src{font-family:var(--f-label);font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
+.empty{color:var(--muted);padding:16px 0}
+details{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin-top:10px}
+summary{cursor:pointer;font-weight:600}
+details ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+details li{margin:3px 0}
+.updated{color:var(--muted);font-size:12.5px;margin:10px 0 0}
+.updated:empty{display:none}
+.foot{color:var(--muted);font-size:12.5px;margin-top:28px;max-width:72ch}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr) auto}.row .mv{grid-column:1 / -1;flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:4px 10px}.row .facts{grid-column:1 / -1}.row .status{grid-column:1 / -1;justify-content:flex-start}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>SF Apartment Hunt</h1>
+  <p class="sub">Move-in target Jan 1, 2027. 1BR+ (2BR bonus), 600+ ft², laundry in unit or building, $6,000 max. Pulled Oct 1-10 from Craigslist, Zumper, Compass, Redfin, RentCafe, Apartments.com and ~25 SF property managers.</p>
+
+  <div class="brief">
+    <div class="key"><b>The Jan 1 problem</b><p>Few listings name a Jan 1 date yet. SF landlords list 30-45 days ahead, so real Jan 1 stock appears mid-Nov to early Dec. Use this list to ask which landlords will hold or start a lease later.</p></div>
+    <div><b>Utilities</b><p>None of these include utilities. "All-in" assumes about $200/mo for PG&amp;E and internet.</p></div>
+    <div><b>Skipped</b><p>Tenderloin, Civic Center, Mid-Market, 6th St corridor, Tendernob blocks, plus a set of likely scams (listed at the bottom).</p></div>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filters">
+    <label for="f-sort">Sort</label>
+    <select id="f-sort">
+      <option value="fit">Best fit</option>
+      <option value="movein">Move-in, closest to Jan 1</option>
+      <option value="rent">Rent, low to high</option>
+      <option value="sqft">Size, big to small</option>
+      <option value="ppsf">$/ft², low to high</option>
+    </select>
+    <button class="chip" id="f-win" aria-pressed="false">Dec 15 to Jan 15 only</button>
+    <button class="chip" id="f-2br" aria-pressed="false">2BR only</button>
+    <button class="chip" id="f-unit" aria-pressed="false">In-unit W/D</button>
+    <button class="chip" id="f-park" aria-pressed="false">Has parking</button>
+    <button class="chip" id="f-allin" aria-pressed="false">Under $6k all-in</button>
+    <button class="chip" id="f-hide" aria-pressed="false">Hide passed</button>
+    <button class="chip" id="f-gone" aria-pressed="false">Show no-longer-listed</button>
+    <span class="count" id="count"></span>
+  </div>
+
+  <p class="updated" id="updated"></p>
+  <p class="updated" id="note" role="status"></p>
+  <div id="groups"></div>
+
+  <details>
+    <summary>Likely scams and below-market listings (not included above)</summary>
+    <ul>
+      <li>999 Green St, Russian Hill: 1BR 986 ft² at $2,130 (a 2BR in the same building lists at $9,995)</li>
+      <li>1900 Washington St, Pac Heights: 1BR at $1,645 (scam or income-restricted)</li>
+      <li>2290 Stockton St #660, North Beach: furnished 1BR at $2,950</li>
+      <li>333 Main St 6F, Rincon: 1BR condo at $1,900 (TurboTenant form)</li>
+      <li>5900 3rd St #2205, Bayview: "luxury" 1BR at $980 and $3,100</li>
+      <li>888 O'Farrell, 1177 California (Gramercy), 555 4th St penthouse, 628 Natoma, 425 1st St: all priced $1,700 to $3,350, far under market</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Dropped for location</summary>
+    <ul>
+      <li>101 Polk (The Civic), 639 Geary, 1035 Sutter, 535 Taylor, 701 Taylor, 610 Leavenworth: Civic Center / Tenderloin / Tendernob</li>
+      <li>368 Elm St near Turk and 950 Franklin: Van Ness and Turk area</li>
+      <li>1875 Mission (16th St BART), 2 and 6 Mint Plaza, 230 7th St, 140 S Van Ness, AVA 55 9th St: Mid-Market and 6th St edges</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Just over budget but worth a look</summary>
+    <ul>
+      <li>770 Filbert #1, North Beach: 2BR, 1,050 ft², $6,180, laundry on site (Sutro)</li>
+      <li>1871 Lombard, Marina: 2BR, 950 ft², $6,200 (Gordon)</li>
+      <li>3344 Divisadero, Marina: 2BR/1.5BA, 1,400 ft², $6,250, parking (Tower Rents)</li>
+      <li>795 Pine #44, Nob Hill: manager page says $6,195 vs $5,995 on Craigslist</li>
+    </ul>
+  </details>
+
+  <p class="foot">Facts come from each listing page as of Oct 1-2, 2026. "?" means the listing didn't say. Contact / Contacted / Pass marks save in your own browser only.</p>
+</div>
+
+<script>
+// Listings live in the artifact database (collection "listings"); a daily scheduled run adds new ones and marks gone ones.
+// Contact status lives in collection "status"; run info in doc "meta/run".
+var TIERS={0:["December and January move-ins","Green = Dec 15 to Jan 15, amber = close to it"],1:["Top picks","North Beach, Telegraph Hill, Russian Hill, Marina, Cow Hollow, Pac Heights, Nob Hill, Hayes Valley"],2:["Also good","NoPa, Alamo Sq, Japantown, Mission, Dolores, Potrero, Dogpatch"],3:["Lower priority","SOMA, Rincon Hill, South Beach, Mission Bay"]};
+var UTIL=200, NEAR="2026-12-01";
+var L=[], status={}, meta=null, db=null, loaded=false;
+var state={win:false,sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
+function money(n){return n==null?"?":"$"+Number(n).toLocaleString("en-US")}
+function fmtDate(iso){if(!iso)return "";var p=iso.split("-");var m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+p[1]-1];return m+" "+(+p[2])+(p[0]==="2027"?", 2027":"")}
+function daysAgo(iso){if(!iso)return 999;return Math.floor((Date.now()-new Date(iso+"T12:00:00").getTime())/864e5)}
+function has(x,f){return Array.isArray(x.f)&&x.f.indexOf(f)>-1}
+function near(x){return has(x,"jan")||(x.ad&&x.ad>=NEAR)}
+function fit(x){if(has(x,"jan"))return "in";if(!x.ad)return "unk";if(x.ad>="2026-12-15"&&x.ad<="2027-01-15")return "in";if(x.ad>="2026-12-01"&&x.ad<="2027-01-31")return "close";return "early"}
+var FITTXT={in:"In your window",close:"Close to window",early:"Too early",unk:"Date not listed"};
+function bigDate(x){if(has(x,"jan")&&x.ad<"2026-12-15")return "Jan 1?";if(!x.ad)return /ask|soon/i.test(x.av||"")?"Ask":(x.av||"Ask");if(/^now$/i.test(x.av||"")||x.ad<=new Date().toISOString().slice(0,10))return "Now";return fmtDate(x.ad).replace(", 2027","")}
+function dist(x){if(!x.ad)return 1e6;return Math.abs(new Date(x.ad)-new Date("2027-01-01"))/864e5}
+function score(x){
+  var s=0; s+= x.bd>=2?30:0; s+= x.sf? Math.min(x.sf,1000)/25:12; s+= x.l==="unit"?10:x.l==="bldg"?4:0; s+= x.pk?6:0;
+  var fk=fit(x); s+= fk==="in"?45:fk==="close"?18:0;
+  if(has(x,"verify")||has(x,"edge"))s-=8; return s;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function tag(txt,cls){return el("span","tag"+(cls?" "+cls:""),txt)}
+function setStatus(id,s){
+  status[id]=(status[id]===s)?"":s; render();
+  try{localStorage.setItem("sfhunt-status",JSON.stringify(status))}catch(e){}
+}
+function render(){
+  var root=document.getElementById("groups"); root.textContent="";
+  var upd=document.getElementById("updated");
+  upd.textContent= meta&&meta.lastRun ? "Last refreshed "+meta.lastRun+(meta.summary?". "+meta.summary:"") : "";
+  if(!loaded){root.appendChild(el("p","empty",db===null?"Listings load from this page's saved data. Open it in Claude to see them.":"Loading listings..."));return;}
+  if(!L.length){root.appendChild(el("p","empty","No listings saved yet. The daily refresh adds them here."));return;}
+  var rows=L.filter(function(x){
+    if(x.gone&&!state.gone)return false;
+    if(state.win&&fit(x)!=="in")return false;
+    if(state.two&&x.bd<2)return false;
+    if(state.unit&&x.l!=="unit")return false;
+    if(state.park&&!x.pk)return false;
+    if(state.allin&&(x.r==null||x.r+UTIL>6000))return false;
+    if(state.hide&&status[x.id]==="pass")return false;
+    return true;});
+  var cmp={
+    fit:function(a,b){return score(b)-score(a)},
+    movein:function(a,b){return (has(a,"jan")?0:dist(a))-(has(b,"jan")?0:dist(b))},
+    rent:function(a,b){return (a.r==null?1e9:a.r)-(b.r==null?1e9:b.r)},
+    sqft:function(a,b){return (b.sf||0)-(a.sf||0)},
+    ppsf:function(a,b){return ((a.sf&&a.r)?a.r/a.sf:99)-((b.sf&&b.r)?b.r/b.sf:99)}
+  }[state.sort];
+  document.getElementById("count").textContent=rows.length+" of "+L.filter(function(x){return !x.gone}).length+" listings";
+  [0,1,2,3].forEach(function(t){
+    var g=rows.filter(function(x){return t===0?near(x):(x.t===t&&!near(x))}).sort(cmp);
+    var h=el("h2",null,TIERS[t][0]); h.appendChild(el("small",null,TIERS[t][1]+" · "+g.length)); root.appendChild(h);
+    var list=el("div","list"); root.appendChild(list);
+    if(!g.length){list.appendChild(el("p","empty",t===0?"Nothing with a December or January date yet. The daily refresh will flag new ones.":"Nothing here matches the current filters."));return;}
+    g.forEach(function(x){
+      var st=status[x.id]||"";
+      var row=el("div","row"+(st==="pass"||x.gone?" dim":""));
+      var fk=fit(x); var mv=el("div","mv "+fk);
+      mv.appendChild(el("span","lbl","Move-in")); mv.appendChild(el("span","dt",bigDate(x))); mv.appendChild(el("span","fit",FITTXT[fk]));
+      var bd=bigDate(x); if(x.av&&x.av!==bd&&!/^(now|ask)$/i.test(x.av)&&x.av.replace(", 2027","")!==bd)mv.appendChild(el("span","raw","Listing says: "+x.av));
+      var c1=el("div"); c1.style.minWidth="0";
+      var ad=el("div","addr"); var a=el("a",null,x.a); a.href=x.u; a.target="_blank"; a.rel="noopener"; ad.appendChild(a); c1.appendChild(ad);
+      c1.appendChild(el("div","hood",x.h));
+      if(x.n)c1.appendChild(el("div","note",x.n));
+      c1.appendChild(el("div","src",x.src+(x.firstSeen?" · found "+fmtDate(x.firstSeen):"")));
+      var c2=el("div","nums");
+      c2.appendChild(el("div","rent",money(x.r)));
+      c2.appendChild(el("div","s",x.r!=null?"~"+money(x.r+UTIL)+" all-in":"rent not listed"));
+      c2.appendChild(el("div","s",(x.bd+"BR / "+x.ba+"BA · ")+(x.sf?x.sf+" ft²":"? ft²")+(x.sf&&x.r?" · $"+(x.r/x.sf).toFixed(2)+"/ft²":"")));
+      var c3=el("div","facts");
+      if(x.gone)c3.appendChild(tag("No longer listed","bad"));
+      if(daysAgo(x.firstSeen)<=2&&x.firstSeen!=="2026-10-01")c3.appendChild(tag("New","good"));
+      c3.appendChild(x.l==="unit"?tag("W/D in unit","good"):x.l==="bldg"?tag("Laundry in bldg"):tag("Laundry ?","q"));
+      c3.appendChild(x.pk?tag("Parking: "+x.p,"good"):tag("Parking: "+x.p,"q"));
+      if(x.bd>=2)c3.appendChild(tag("2BR","good"));
+      if(x.r!=null&&x.r+UTIL>6000)c3.appendChild(tag("Over $6k all-in","warn"));
+      if(has(x,"verify"))c3.appendChild(tag("Verify details","warn"));
+      if(has(x,"edge"))c3.appendChild(tag("Check the block","warn"));
+      var c4=el("div","status");
+      [["want","Contact"],["sent","Contacted"],["pass","Pass"]].forEach(function(p){
+        var b=el("button",null,p[1]); b.type="button"; b.dataset.s=p[0]; b.setAttribute("aria-pressed",st===p[0]?"true":"false");
+        b.addEventListener("click",function(){setStatus(x.id,p[0])});
+        c4.appendChild(b);});
+      row.appendChild(mv);row.appendChild(c1);row.appendChild(c2);row.appendChild(c3);row.appendChild(c4);
+      list.appendChild(row);
+    });
+  });
+}
+document.getElementById("f-sort").addEventListener("change",function(e){state.sort=e.target.value;render()});
+[["f-win","win"],["f-2br","two"],["f-unit","unit"],["f-park","park"],["f-allin","allin"],["f-hide","hide"],["f-gone","gone"]].forEach(function(p){
+  var b=document.getElementById(p[0]);
+  b.addEventListener("click",function(){state[p[1]]=!state[p[1]];b.setAttribute("aria-pressed",String(state[p[1]]));render();});
+});
+render();
+(async function(){
+  try{status=JSON.parse(localStorage.getItem("sfhunt-status")||"{}")||{}}catch(e){status={}}
+  db = "static";
+  try{
+    var r=await Promise.all([fetch("data/listings.json",{cache:"no-store"}),fetch("data/meta.json",{cache:"no-store"})]);
+    L=await r[0].json(); meta=await r[1].json();
+  }catch(e){ L=[]; }
+  loaded=true; render();
+})();
+</script>
+
+</body>
+</html>
