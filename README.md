@@ -9,4 +9,4 @@ Live site: https://billywojcicki.github.io/sf-apt-hunt/
 
 Facts come from each listing page on the date shown. Confirm with the landlord before applying or paying anything.
 
-- Contact / Contacted / Pass marks and notes save in your own browser only.
+- `data/status.json` holds Contact / Contacted / Pass marks and notes, shown read-only on the site.
