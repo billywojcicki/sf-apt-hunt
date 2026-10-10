@@ -1,1 +1,67 @@
-{}
+{
+ "1720-clay-st": {
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "Actual move-in date is Dec 1 and loft situation probably won't work with Kiki night shift anyway"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": true,
+  "sentOn": "2026-10-10",
+  "want": false
+ },
+ "1826-broderick-st": {
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "SO GOOD but bathroom is so popped"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "2055-sacramento-st-404": {
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "Too small"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "252-9th-st-304": {
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "Tiny, mid location"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "chestnut-st-near-powell-condo": {
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "Listing has been up for a while and relisted several times I think - contacted twice, no reply"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": true,
+  "sentOn": "2026-10-10",
+  "want": false
+ }
+}

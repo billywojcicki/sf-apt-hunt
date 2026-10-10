@@ -334,12 +334,10 @@
  {
   "a": "1720 Clay St (2-story loft)",
   "ad": "2026-12-01",
-  "av": "Dec 1 (post also says Jan 1)",
+  "av": "Dec 1 (confirmed)",
   "ba": 1,
   "bd": 1,
-  "f": [
-   "jan"
-  ],
+  "f": [],
   "firstSeen": "2026-10-10",
   "gone": false,
   "h": "Russian Hill",
@@ -1702,6 +1700,7 @@
   "n": "Owner says it's unlikely to be available before Jan 1, which fits your date. Unfurnished, 20-unit modern building, gas fireplace, dedicated underground parking. Owner asks for a short intro and LinkedIn.",
   "p": "Garage spot included",
   "pk": true,
+  "posted": "2026-09-20",
   "r": 5500,
   "sf": 789,
   "src": "Craigslist",
