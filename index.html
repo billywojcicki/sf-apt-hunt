@@ -152,7 +152,7 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
 .seg button:hover{border-color:var(--ink)}
 .seg button[aria-pressed="true"][data-s="want"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
 .seg button[aria-pressed="true"][data-s="sent"]{border-color:var(--win);color:var(--win);background:var(--win-soft)}
-.seg button[aria-pressed="true"][data-s="pass"]{border-color:var(--muted);color:var(--ink);background:var(--line)}
+.seg button[aria-pressed="true"][data-s="pass"]{border-color:var(--bad);color:var(--bad);background:var(--bad-soft)}
 .seg button:disabled{cursor:default}
 .seg button:disabled:hover{border-color:var(--line)}
 .seg button[aria-pressed="true"]:disabled:hover{border-color:currentColor}
@@ -165,6 +165,10 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
 .notes .x{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;line-height:1;padding:0 2px}
 .notes .x:hover{color:var(--bad)}
 .nonotes{font-size:12.5px;color:var(--muted);margin:0}
+.noteslbl{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:2px 0 -4px}
+.notes li.ev{background:transparent;border-style:dashed}
+.notes li.ev span{font-weight:600}
+.notes li.ev.sent span{color:var(--win)} .notes li.ev.pass span{color:var(--bad)}
 .addnote{display:flex;gap:6px}
 .addnote input{flex:1;min-width:0;font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink)}
 .addnote button{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:7px;padding:0 12px;font-size:13px;font-weight:600;cursor:pointer}
@@ -251,7 +255,7 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
   .track{padding:10px 12px;gap:8px}
   .seg{gap:5px}
   .seg button{padding:6px 2px;font-size:12.5px}
-  .nonotes{display:none}
+  .nonotes,.noteslbl:has(+ .nonotes){display:none}
   .rocap{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -360,7 +364,7 @@ var SOURCES=[
   {name:"Redfin",re:/Redfin/i,how:"Neighborhood rental search.",note:"Started rate-limiting after a few dozen pages."},
   {name:"Relisto",re:/Relisto/i,how:"Rental listings; most were already rented."},
   {name:"RentSFNow (GreenTree)",re:/RentSFNow/i,how:"Building and unit pages."},
-  {name:"Building watchlist",re:/Building site/i,how:"Leasing sites for buildings you're watching (Chorus, The Brady, and Mission Bay buildings), read directly for exact units, prices and move-in dates."},
+  {name:"Building watchlist",re:/Building site/i,how:"Leasing sites for buildings you're watching, read directly for exact units, prices and move-in dates: Chorus, The Brady, and every market-rate rental building in Mission Bay (Avalon, Channel, Edgewater, Mission Bay by Windsor, Strata, Venue, MB360, Azure, The Canyon and Verde at Mission Rock). Mission Bay condo buildings have no leasing office, so their units are caught through Craigslist and Zumper."},
   {name:"Property manager sites",re:/EM Invest|Sutro|Chandler|Progressive|Bay Property|Tower Rents|Vesta|2B Living|AMSI|Amore|Jimenez|Golden Gate Properties|Housing Guild/i,how:"Listing pages for about 25 SF managers: Sutro, Chandler, Progressive, EM Invest, Bay Property Group, Tower Rents, Vesta, 2B Living, AMSI, Amore, Gaetani, Golden Gate Properties and more."},
   {name:"HotPads",re:/HotPads/i,how:"Neighborhood search.",note:"Results were mostly single rooms and tiny studios."},
   {name:"Trulia",re:/Trulia/i,how:"City rental search.",note:"Only a handful of SoMa listings, with no move-in dates."},
@@ -392,7 +396,7 @@ var AREAS=[
   {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated. Exception: managed buildings you put on the watchlist, like Chorus and The Brady at Market and Van Ness."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-10T23:34:07Z", RUNS=[];
+var BUILT="2026-10-11T16:11:42Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
 
@@ -565,16 +569,18 @@ function card(x,n){
     seg.appendChild(b);
   });
   t.appendChild(seg);
-  var fd=[]; if(r.sent&&r.sentOn)fd.push("Contacted "+fmtDate(r.sentOn)); if(r.pass&&r.passOn)fd.push("Passed "+fmtDate(r.passOn));
-  t.appendChild(el("p","flagdates",fd.join(" · ")));
-  var notes=r.notes||[];
-  if(notes.length){
+  t.appendChild(el("p","noteslbl","Notes"));
+  var items=(r.notes||[]).map(function(nt,i){return {d:nt.d||"",t:nt.t,i:i}});
+  if(r.sent&&r.sentOn)items.push({d:r.sentOn,t:"Contacted",ev:"sent"});
+  if(r.pass&&r.passOn)items.push({d:r.passOn,t:"Passed",ev:"pass"});
+  items.sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:(a.ev?0:1)-(b.ev?0:1)});
+  if(items.length){
     var ul=el("ul","notes");
-    notes.forEach(function(nt,i){
-      var li=el("li"); var tm=el("time",null,fmtDate(nt.d)); tm.dateTime=nt.d; li.appendChild(tm); li.appendChild(el("span",null,nt.t));
-      if(ro){li.style.gridTemplateColumns="auto 1fr"; ul.appendChild(li); return}
-      var xb=el("button","x","×"); xb.type="button"; xb.setAttribute("aria-label","Delete note: "+nt.t);
-      xb.addEventListener("click",function(){delNote(x.id,i).then(function(ok){if(!ok)flagSave(x.id)})});
+    items.forEach(function(it){
+      var li=el("li",it.ev?"ev "+it.ev:null); var tm=el("time",null,fmtDate(it.d)); tm.dateTime=it.d; li.appendChild(tm); li.appendChild(el("span",null,it.t));
+      if(ro||it.ev){li.style.gridTemplateColumns="auto 1fr"; ul.appendChild(li); return}
+      var xb=el("button","x","×"); xb.type="button"; xb.setAttribute("aria-label","Delete note: "+it.t);
+      xb.addEventListener("click",function(){delNote(x.id,it.i).then(function(ok){if(!ok)flagSave(x.id)})});
       li.appendChild(xb); ul.appendChild(li);
     });
     t.appendChild(ul);

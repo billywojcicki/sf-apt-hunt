@@ -31,10 +31,10 @@ Write only facts seen on the page. No em dashes, no emojis.
 
 ## Being polite to sites
 
-- Use the Claude app's browser on the user's computer (`mcp__remote-devices__Claude_Browser__*`) for Craigslist, Zumper, Apartments.com and SightMap. Fetch with `fetch()` from a page on the same site.
+- If the Claude app's browser on the user's computer is reachable (`mcp__remote-devices__Claude_Browser__*` tools present and answering), use it for Craigslist, Zumper, Apartments.com and SightMap, fetching with `fetch()` from a page on the same site. The scheduled run usually happens in the cloud while the computer sleeps; then use WebFetch for everything, and for SightMap pages that need scripts, log them as `partial`.
 - Wait 3 to 5 seconds between page loads. Craigslist: at most 6 search pages and 40 posting pages a day. Apartments.com: at most 15 pages. Zumper: at most 12.
 - Stop using a site at its first block (403, 429, "Your request has been blocked", a CAPTCHA or "Access denied" page). Log it as `blocked` and move on. Never try to get around a block or solve a CAPTCHA.
-- If the computer can't be reached, skip the browser sources, log them as `skipped` with "computer offline", and still do what WebFetch can (building sites, AppFolio pages).
+- If a source only works in the browser and the computer can't be reached, log it as `skipped` with "computer asleep" and carry on.
 
 ## Steps
 
@@ -44,11 +44,22 @@ Write only facts seen on the page. No em dashes, no emojis.
 4. Watchlist buildings (always check):
    - Chorus, 30 Otis St: open `https://sightmap.com/embed/0n9w6r13w71`, find the `/app/api/v1/.../sightmaps/<id>` request in `performance.getEntriesByType('resource')`, fetch it, and read `data.units` (`unit_number`, `area`, `display_price`, `available_on`) with bedrooms from `data.floor_plans`.
    - The Brady, 1 Brady St: `https://thebradysf.com/floorplans/` (plans, prices, units left; no dates on the page).
-   - Mission Bay: Avalon at Mission Bay (255 King St), Channel Mission Bay (185 Channel St), and other Mission Bay buildings the user names. Use each building's own leasing page; if it embeds SightMap, use the method above.
+   - Mission Bay market-rate rentals (use each building's own leasing page; if it embeds SightMap, use the method above):
+     - Avalon at Mission Bay, 255 King St and 240 Berry St: https://www.avaloncommunities.com/california/san-francisco-apartments/avalon-at-mission-bay
+     - Channel Mission Bay, 185 Channel St: https://www.udr.com/san-francisco-bay-area-apartments/san-francisco/channel-mission-bay/apartments-pricing/
+     - Edgewater, 355 Berry St: https://www.udr.com/san-francisco-bay-area-apartments/san-francisco/edgewater/apartments-pricing/
+     - Mission Bay by Windsor, 360 Berry St: https://www.windsorcommunities.com/properties/mission-bay-by-windsor/floorplans/
+     - Strata, 1201 4th St: https://www.stratasf.com/availability
+     - Venue, 1155 4th St: https://www.venuesf.com/availability
+     - MB360, 1200 4th St: https://www.essexapartmenthomes.com/apartments/san-francisco/mb360/floor-plans-and-pricing
+     - Azure, 690 Long Bridge St: https://www.equityapartments.com/san-francisco-bay/mission-bay/azure-apartments
+     - The Canyon at Mission Rock, 1023 3rd St, and Verde at Mission Rock, 1070 Bridgeview Way (Greystar; find the current leasing page by search if these links redirect)
+   - Mission Bay condo buildings have no leasing office. Catch their units through Craigslist and Zumper by address: The Beacon (250 to 260 King St), Arterra (300 to 310 Berry St), Park Terrace (325 Berry St), 235 and 255 Berry St, Radiance (330 Mission Bay Blvd N), Madrone (420 to 480 Mission Bay Blvd N), Arden (708 to 738 Long Bridge St), One Mission Bay (1000 3rd St and 110 Channel St), Glassworks (207 King St).
+   - Skip income-restricted and university housing (Five 88, 1180 4th St, Edwin M. Lee, Crescent Cove, Rich Sorro, Mission Creek Senior, HomeRise, UCSF housing).
    - For each building keep one listing doc (`src` "Building site (watchlist)") whose note lists the best-fitting units and the latest start date seen. If a unit fits the criteria and starts Dec 15 to Feb 1, also add it as its own listing.
 5. Zumper neighborhood pages for the included areas, newest first, for listings with an available date in the window.
 6. Apartments.com only if the last run wasn't blocked there: the watchlist buildings' pages first.
-7. New listings: geocode with `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=<address>, San Francisco, CA` (one request per second), then set `mh` by point-in-polygon against `tools/hood_rings.json`.
+7. New listings: geocode with `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=<address>, San Francisco, CA` (one request per second, through the browser or WebFetch; the shell can't reach it), then set `mh` by point-in-polygon against `tools/hood_rings.json`.
 8. Write all changes with ArtifactData batch (50 writes max per batch, pin `if_version` on existing docs). Write the run doc with every source's status and a one-line detail, and update `meta/run`.
 9. Build and deploy:
    - Dump `listings`, `status`, `runs` and `meta` with ArtifactData list `out_dir`.

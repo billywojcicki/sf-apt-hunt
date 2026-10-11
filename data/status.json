@@ -1,4 +1,17 @@
 {
+ "1624-vallejo-st": {
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "Doesn't seem legit"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
  "1720-clay-st": {
   "notes": [
    {
@@ -51,6 +64,27 @@
   "sentOn": "",
   "want": false
  },
+ "3501-laguna-st": {
+  "notes": [
+   {
+    "d": "2026-10-10",
+    "t": "AMAZING PLACE but listed 9 days ago for ASAP move-in"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "cervantes-near-avila": {
+  "notes": [],
+  "pass": false,
+  "passOn": "",
+  "sent": true,
+  "sentOn": "2026-10-10",
+  "want": false
+ },
  "chestnut-st-near-powell-condo": {
   "notes": [
    {
@@ -65,16 +99,16 @@
   "want": false
  },
  "powell-st-near-bay-top-floor": {
-  "want": false,
-  "sent": false,
-  "pass": true,
-  "sentOn": "",
-  "passOn": "2026-10-10",
   "notes": [
    {
     "d": "2026-10-10",
     "t": "The wall between bedroom and living room does not reach the ceiling"
    }
-  ]
+  ],
+  "pass": true,
+  "passOn": "2026-10-10",
+  "sent": false,
+  "sentOn": "",
+  "want": false
  }
 }
