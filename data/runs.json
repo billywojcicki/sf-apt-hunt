@@ -1,6 +1,71 @@
 [
  {
   "approx": false,
+  "at": "2026-10-11T16:20:00Z",
+  "goneCount": 1,
+  "newCount": 5,
+  "sources": [
+   {
+    "d": "5 searches and 40 new posts read with 3-second gaps; no block. One in-window post (252 9th St repost, already passed). Rechecked 6 saved posts: Cervantes taken down, others still up.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "32 units; latest start Dec 6, nothing in your window yet.",
+    "n": "Chorus (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Prices read; the site still shows no move-in dates.",
+    "n": "The Brady",
+    "st": "partial"
+   },
+   {
+    "d": "11 units, all starting Oct 11 to Nov 27.",
+    "n": "Azure (Mission Bay)",
+    "st": "ok"
+   },
+   {
+    "d": "0 units available at either.",
+    "n": "Channel Mission Bay and Edgewater",
+    "st": "ok"
+   },
+   {
+    "d": "Only 6 of 37 units came through; all start now.",
+    "n": "Avalon at Mission Bay",
+    "st": "partial"
+   },
+   {
+    "d": "Pages came back as unreadable data; need the browser next time.",
+    "n": "Strata and Venue",
+    "st": "failed"
+   },
+   {
+    "d": "Pages load but don't list units without scripts.",
+    "n": "MB360 and Mission Bay by Windsor",
+    "st": "partial"
+   },
+   {
+    "d": "Leasing links redirect; need to find current pages.",
+    "n": "The Canyon and Verde (Mission Rock)",
+    "st": "skipped"
+   },
+   {
+    "d": "Not checked this run.",
+    "n": "Zumper",
+    "st": "skipped"
+   },
+   {
+    "d": "Not checked this run, to let the Oct 10 block clear.",
+    "n": "Apartments.com",
+    "st": "skipped"
+   }
+  ],
+  "summary": "No new Dec 15 to Feb 1 move-ins. Added 3 no-date listings (Noe Valley, Rincon Hill, Inner Sunset) and 2 reposts; Cervantes was taken down. Craigslist is unblocked.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-10T23:50:00Z",
   "goneCount": 1,
   "newCount": 2,
