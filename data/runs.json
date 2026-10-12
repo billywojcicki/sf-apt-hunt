@@ -1,6 +1,41 @@
 [
  {
   "approx": false,
+  "at": "2026-10-12T20:15:00Z",
+  "goneCount": 0,
+  "newCount": 1,
+  "sources": [
+   {
+    "d": "3 searches (posted today, january, december) and 8 new posts read in full with gaps; no block. 1 fit added. Most others were before Dec 15, in excluded areas or under 600 ft\u00b2.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "78 Buchanan #104 (passed) reposted with Oct 31; Chestnut near Powell (passed) still Jan 1. No later dates.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "Checked this morning (Chorus, The Brady, Strata, Venue, Windsor, MB360, Avalon, Greystar); not rechecked.",
+    "n": "Watchlist buildings",
+    "st": "skipped"
+   },
+   {
+    "d": "Russian Hill page read: 40 rentals, mostly available now. My fetch tool started needing your approval, so I stopped before Marina and Pac Heights.",
+    "n": "Apartment List (new)",
+    "st": "partial"
+   },
+   {
+    "d": "Rental search only loads with scripts; nothing readable.",
+    "n": "MLSListings (new)",
+    "st": "failed"
+   }
+  ],
+  "summary": "Quiet afternoon: no new Dec 15 to Feb 1 move-ins and no comebacks. 1 new no-date listing (512 Cole St, 1,020 ft\u00b2 1BR with W/D and garage at $4,000; double-check it). Every post's full description was read for dates.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-12T16:30:00Z",
   "goneCount": 2,
   "newCount": 7,

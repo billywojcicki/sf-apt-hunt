@@ -1473,6 +1473,36 @@
   "id": "4044-26th-st"
  },
  {
+  "a": "512 Cole St",
+  "ad": "",
+  "av": "",
+  "ba": 1,
+  "bd": 1,
+  "f": [
+   "verify",
+   "edge"
+  ],
+  "firstSeen": "2026-10-12",
+  "gone": false,
+  "h": "Cole Valley / Upper Haight",
+  "img": "",
+  "l": "unit",
+  "lastSeen": "2026-10-12",
+  "lat": 37.770405,
+  "lng": -122.450385,
+  "mh": "Haight Ashbury",
+  "n": "Owner-rented TIC, 1,020 ft\u00b2 with a flexible layout the title calls a 2BR, W/D in unit, garage, shared citrus yard. Renovated 2020. Rent is low for the size, so confirm it's a real lease. The description has no move-in date; ask.",
+  "p": "Attached garage",
+  "pk": true,
+  "posted": "2026-10-12",
+  "r": 4000,
+  "sf": 1020,
+  "src": "Craigslist",
+  "t": 1,
+  "u": "https://www.craigslist.org/view/d/san-francisco-updated-upper-haight-2bb/kGKQw1Scd6Ux1V7zPw8J3o",
+  "id": "512-cole-st"
+ },
+ {
   "a": "600 Oak St #12",
   "ad": "2026-10-01",
   "av": "Now",
