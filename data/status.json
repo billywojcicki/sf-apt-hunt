@@ -51,6 +51,32 @@
   "sentOn": "",
   "want": false
  },
+ "2326-taylor-st": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "Move-in is ASAP. Location and price pretty good, but for the sq ft it lists the photos make it look really cramped still."
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "240-lombard-st-536": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "Looks so cramped"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
  "252-9th-st-304": {
   "notes": [
    {
@@ -77,6 +103,45 @@
   "sentOn": "",
   "want": false
  },
+ "3986-24th-st": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "Really not bad, nice big balcony, but sq footage too small to justify Noe Valley"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "795-pine-st-44": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "Not bad for 2BR! Listed 15 days ago as of this note being written so assume it's snatched and/or not avail for our move-in timeline."
+   }
+  ],
+  "pass": false,
+  "passOn": "",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "alchemy-200-buchanan-st": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "Quality isn't nice enough to justify price."
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
  "cervantes-near-avila": {
   "notes": [],
   "pass": false,
@@ -98,6 +163,19 @@
   "sentOn": "2026-10-10",
   "want": false
  },
+ "one-henry-adams": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "Area too undesirable to justify sq footage"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
  "powell-st-near-bay-top-floor": {
   "notes": [
    {
@@ -107,6 +185,19 @@
   ],
   "pass": true,
   "passOn": "2026-10-10",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "sunset-towers-8-locksley-ave": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "Location isn't ideal enough to justify sq footage."
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-11",
   "sent": false,
   "sentOn": "",
   "want": false
