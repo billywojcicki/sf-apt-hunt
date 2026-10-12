@@ -356,7 +356,7 @@ var PROJ={"lon0": -122.5155, "lat0": 37.8335, "k": 8000.0, "c": 0.79047582143113
 var UTIL=200, WIN_START="2026-12-15", WIN_END="2027-02-01", LATE_END="2027-02-15";
 
 var SOURCES=[
-  {name:"Craigslist",re:/^Craigslist/i,how:"Search pages plus each posting, filtered by price, beds, size and laundry.",note:"Craigslist blocked our browser on Oct 10 after heavy searching. It should clear on its own."},
+  {name:"Craigslist",re:/^Craigslist/i,how:"Search pages plus each posting, filtered by price, beds, size and laundry.",note:"Blocked our browser on Oct 10 after heavy searching. Cleared Oct 11; runs now stay small with gaps between pages."},
   {name:"Zumper",re:/Zumper/i,how:"Neighborhood and building pages."},
   {name:"Apartments.com",re:/Apartments\.com/i,how:"Building pages with per-unit move-in dates.",note:"Started blocking our browser on Oct 10 partway through a late-January sweep."},
   {name:"Compass",re:/Compass/i,how:"Rental listing pages."},
@@ -364,8 +364,9 @@ var SOURCES=[
   {name:"Redfin",re:/Redfin/i,how:"Neighborhood rental search.",note:"Started rate-limiting after a few dozen pages."},
   {name:"Relisto",re:/Relisto/i,how:"Rental listings; most were already rented."},
   {name:"RentSFNow (GreenTree)",re:/RentSFNow/i,how:"Building and unit pages."},
-  {name:"Building watchlist",re:/Building site/i,how:"Leasing sites for buildings you're watching, read directly for exact units, prices and move-in dates: Chorus, The Brady, and every market-rate rental building in Mission Bay (Avalon, Channel, Edgewater, Mission Bay by Windsor, Strata, Venue, MB360, Azure, The Canyon and Verde at Mission Rock). Mission Bay condo buildings have no leasing office, so their units are caught through Craigslist and Zumper."},
-  {name:"Property manager sites",re:/EM Invest|Sutro|Chandler|Progressive|Bay Property|Tower Rents|Vesta|2B Living|AMSI|Amore|Jimenez|Golden Gate Properties|Housing Guild/i,how:"Listing pages for about 25 SF managers: Sutro, Chandler, Progressive, EM Invest, Bay Property Group, Tower Rents, Vesta, 2B Living, AMSI, Amore, Gaetani, Golden Gate Properties and more."},
+  {name:"Building watchlist",re:/Building site|Building watch/i,how:"Leasing sites for buildings you're watching, read directly for exact units, prices and move-in dates: Chorus, The Brady, and every market-rate rental building in Mission Bay (Avalon, Channel, Edgewater, Mission Bay by Windsor, Strata, Venue, MB360, Azure, The Canyon and Verde at Mission Rock). Also 1598 Bay St in the Marina, a mostly owner-held condo building checked on Craigslist and listing sites each run. Mission Bay condo buildings have no leasing office, so their units are caught through Craigslist and Zumper."},
+  {name:"Greystar",re:/Greystar/i,how:"Greystar's SF search (about 32 buildings) and building pages with unit dates and 12-month prices. Added Oct 11. Covers 240 Dolores, 2000 Broadway, 1000 Chestnut, 2133 Stockton, Crystal Tower, 38 Dolores, The Martin, 777 Tenn and more."},
+  {name:"Property manager sites",re:/EM Invest|Sutro|Chandler|Progressive|Bay Property|Tower Rents|Vesta|2B Living|AMSI|Amore|Jimenez|Golden Gate Properties|Housing Guild|Wavro/i,how:"Listing pages for about 25 SF managers: J. Wavro, Sutro, Chandler, Progressive, EM Invest, Bay Property Group, Tower Rents, Vesta, 2B Living, AMSI, Amore, Gaetani, Golden Gate Properties and more."},
   {name:"HotPads",re:/HotPads/i,how:"Neighborhood search.",note:"Results were mostly single rooms and tiny studios."},
   {name:"Trulia",re:/Trulia/i,how:"City rental search.",note:"Only a handful of SoMa listings, with no move-in dates."},
   {name:"SabbaticalHomes and FurnishedFinder",re:/Sabbatical|FurnishedFinder/i,how:"Searched for Jan 1 starts.",note:"Found several, all furnished short-term sublets. Left out because you want a lease."}
@@ -377,6 +378,7 @@ var SKIPPED=[
   ["Apartment List","The search page I tried came back as not found; not retried yet."],
   ["Facebook Marketplace and groups","Need a logged-in account, so I didn't search them for you."],
   ["Nextdoor","Needs a logged-in account."],
+  ["The Canyon and Verde (Mission Rock)","Greystar no longer lists them and their old links redirect. Third-party unit pages show no prices or dates. Will retry if a leasing site turns up."],
   ["Veritas / GreenTree direct site","Listings only appear after the page runs scripts, so nothing came through. Their units show up on RentSFNow."],
   ["Trinity Properties","Their building sites don't show which units are open."],
   ["Prado Group, Grosvenor, Mosser direct sites","No usable listing pages. Grosvenor and Mosser buildings were covered through RentCafe."]
@@ -396,7 +398,7 @@ var AREAS=[
   {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated. Exception: managed buildings you put on the watchlist, like Chorus and The Brady at Market and Van Ness."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-12T01:29:20Z", RUNS=[];
+var BUILT="2026-10-12T02:00:59Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
 

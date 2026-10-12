@@ -13,17 +13,17 @@
   "want": false
  },
  "1700-california-st": {
-  "want": false,
-  "sent": false,
-  "pass": true,
-  "sentOn": "",
-  "passOn": "2026-10-11",
   "notes": [
    {
     "d": "2026-10-11",
     "t": "Checked website - real price is like $6000 for a 600 sq ft 1BR."
    }
-  ]
+  ],
+  "pass": true,
+  "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
+  "want": false
  },
  "1720-clay-st": {
   "notes": [

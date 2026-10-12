@@ -43,27 +43,29 @@ Write only facts seen on the page. No em dashes, no emojis.
 3. Recheck known listings: every in-window or no-date listing daily, everything else on Mondays and Thursdays. A 404 or 410, or a "deleted" or "expired" page, means `gone: true`. Otherwise set `lastSeen` to today and fix rent or date if they changed.
 4. Watchlist buildings (always check):
    - Chorus, 30 Otis St: open `https://sightmap.com/embed/0n9w6r13w71`, find the `/app/api/v1/.../sightmaps/<id>` request in `performance.getEntriesByType('resource')`, fetch it, and read `data.units` (`unit_number`, `area`, `display_price`, `available_on`) with bedrooms from `data.floor_plans`.
-   - The Brady, 1 Brady St: `https://thebradysf.com/floorplans/` (plans, prices, units left; no dates on the page).
+   - The Brady, 1 Brady St: SightMap code `jlw0nexgp2y` (same method as Chorus; gives unit dates and prices).
+   - 1598 Bay St (Marina, mostly owner-held condos at Bay and Octavia): search Craigslist for `1598 bay` and check https://sfhighrises.com/building/1598-bay/ for rentals. Keep the `1598-bay-st` doc's note and `lastSeen` current; add any real unit as its own listing.
    - Mission Bay market-rate rentals (use each building's own leasing page; if it embeds SightMap, use the method above):
-     - Avalon at Mission Bay, 255 King St and 240 Berry St: https://www.avaloncommunities.com/california/san-francisco-apartments/avalon-at-mission-bay
+     - Avalon at Mission Bay, 255 King St and 240 Berry St: https://www.avaloncommunities.com/california/san-francisco-apartments/avalon-at-mission-bay (add `?furnished=false&moveInDate=12%2F15%2F2026&leaseTerm=12` to a unit URL and read the page text for the quote)
      - Channel Mission Bay, 185 Channel St: https://www.udr.com/san-francisco-bay-area-apartments/san-francisco/channel-mission-bay/apartments-pricing/
      - Edgewater, 355 Berry St: https://www.udr.com/san-francisco-bay-area-apartments/san-francisco/edgewater/apartments-pricing/
-     - Mission Bay by Windsor, 360 Berry St: https://www.windsorcommunities.com/properties/mission-bay-by-windsor/floorplans/
-     - Strata, 1201 4th St: https://www.stratasf.com/availability
-     - Venue, 1155 4th St: https://www.venuesf.com/availability
-     - MB360, 1200 4th St: https://www.essexapartmenthomes.com/apartments/san-francisco/mb360/floor-plans-and-pricing
+     - Mission Bay by Windsor, 360 Berry St: https://www.windsorcommunities.com/properties/mission-bay-by-windsor/floorplans/ (page text in the browser lists units, dates and total price)
+     - Strata, 1201 4th St: SightMap `dzlpodl9wg4`
+     - Venue, 1155 4th St: SightMap `910pd5yyw2z`
+     - MB360, 1200 4th St: from an essexapartmenthomes.com page, fetch `/api/properties/513956/availability?start_date=2026-12-15&end_date=2027-02-01&format=spa` and read `result.floorplans[].units[]` (`name`, `beds`, `sqft`, `minimum_rent`, `availability_date`)
      - Azure, 690 Long Bridge St: https://www.equityapartments.com/san-francisco-bay/mission-bay/azure-apartments
-     - The Canyon at Mission Rock, 1023 3rd St, and Verde at Mission Rock, 1070 Bridgeview Way (Greystar; find the current leasing page by search if these links redirect)
+     - The Canyon at Mission Rock, 1023 3rd St, and Verde at Mission Rock, 1070 Bridgeview Way: Greystar dropped them (links redirect) as of Oct 11. Log `failed` unless a new leasing site turns up.
    - Mission Bay condo buildings have no leasing office. Catch their units through Craigslist and Zumper by address: The Beacon (250 to 260 King St), Arterra (300 to 310 Berry St), Park Terrace (325 Berry St), 235 and 255 Berry St, Radiance (330 Mission Bay Blvd N), Madrone (420 to 480 Mission Bay Blvd N), Arden (708 to 738 Long Bridge St), One Mission Bay (1000 3rd St and 110 Channel St), Glassworks (207 King St).
    - Skip income-restricted and university housing (Five 88, 1180 4th St, Edwin M. Lee, Crescent Cove, Rich Sorro, Mission Creek Senior, HomeRise, UCSF housing).
    - For each building keep one listing doc (`src` "Building site (watchlist)") whose note lists the best-fitting units and the latest start date seen. If a unit fits the criteria and starts Dec 15 to Feb 1, also add it as its own listing.
-5. Zumper neighborhood pages for the included areas, newest first, for listings with an available date in the window.
-6. Apartments.com only if the last run wasn't blocked there: the watchlist buildings' pages first.
-7. New listings: geocode with `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=<address>, San Francisco, CA` (one request per second, through the browser or WebFetch; the shell can't reach it), then set `mh` by point-in-polygon against `tools/hood_rings.json`.
-8. Write all changes with ArtifactData batch (50 writes max per batch, pin `if_version` on existing docs). Write the run doc with every source's status and a one-line detail, and update `meta/run`.
-9. Build and deploy:
+5. Greystar SF search `https://www.greystar.com/s/san-francisco-ca` and building pages (unit dates and 12-month prices). J. Wavro listings. RentSFNow `/apartments/?city=san-francisco&bedrooms=1&view=list` (Veritas units are mostly under 600 ft²).
+6. Zumper neighborhood pages for the included areas, newest first, for listings with an available date in the window.
+7. Apartments.com only if the last run wasn't blocked there: the watchlist buildings' pages first.
+8. New listings: geocode with `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=<address>, San Francisco, CA` (one request per second, through the browser or WebFetch; the shell can't reach it), then set `mh` by point-in-polygon against `tools/hood_rings.json`.
+9. Write all changes with ArtifactData batch (50 writes max per batch, pin `if_version` on existing docs). Write the run doc with every source's status and a one-line detail, and update `meta/run`.
+10. Build and deploy:
    - Dump `listings`, `status`, `runs` and `meta` with ArtifactData list `out_dir`.
    - `python3 -I tools/build_all.py tools/page_template.html tools/mapbits.json <scratch>/sf-apartment-hunt.html . <dump>/listings <dump>/meta/run.json <dump>/status <dump>/runs`
    - Read the artifact (`Artifact` action read with the URL above), then publish `<scratch>/sf-apartment-hunt.html` with that `url`. Don't pass `capabilities`.
    - Commit and push to `main`.
-10. Final message: if any new listing starts Dec 15 to Feb 1, begin with "New Dec 15 to Feb 1 move-in:" and list address, neighborhood, beds, sq ft, rent, date and link. Otherwise one line: how many new, how many gone, which sources were blocked.
+11. Final message: if any new listing starts Dec 15 to Feb 1, begin with "New Dec 15 to Feb 1 move-in:" and list address, neighborhood, beds, sq ft, rent, date and link. Otherwise one line: how many new, how many gone, which sources were blocked.

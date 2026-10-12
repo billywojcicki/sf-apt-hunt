@@ -1,6 +1,91 @@
 [
  {
   "approx": false,
+  "at": "2026-10-12T02:00:00Z",
+  "goneCount": 0,
+  "newCount": 5,
+  "sources": [
+   {
+    "d": "Small searches with gaps; no block. 2 new fits (4044 26th St, 240 Dolores). No posts for 1598 Bay St.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Unit page quotes a Dec 15 start: #0T2-210 1BR 955 ft\u00b2 $4,695 on 12 months.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "Essex pricing for a Dec 15 to Feb 1 start: three 1BRs $5,407 to $5,607; 2BRs over max.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "3 units: 2BR Jan 4 and Jan 7 ($6,244 to $6,379 base), 1BR Nov 16.",
+    "n": "Mission Bay by Windsor",
+    "st": "ok"
+   },
+   {
+    "d": "Found its unit map: 28 units, all starting now to Nov 30. 2BRs from $5,411.",
+    "n": "The Brady",
+    "st": "ok"
+   },
+   {
+    "d": "32 units; latest start Dec 6, nothing in your window yet.",
+    "n": "Chorus (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Read through the browser this time; nothing starting in your window.",
+    "n": "Strata and Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "No change: Channel and Edgewater 0 open, Azure all before Dec 15.",
+    "n": "Channel, Edgewater, Azure",
+    "st": "ok"
+   },
+   {
+    "d": "Greystar dropped them; no current leasing page with prices or dates.",
+    "n": "The Canyon and Verde (Mission Rock)",
+    "st": "failed"
+   },
+   {
+    "d": "New source. Everything listed is available now.",
+    "n": "J. Wavro",
+    "st": "ok"
+   },
+   {
+    "d": "New source. 32 SF buildings; 240 Dolores 2BR Nov 16 at $5,199; 2000 Broadway studios only; 1000 Chestnut over max.",
+    "n": "Greystar search",
+    "st": "ok"
+   },
+   {
+    "d": "1BR list read; every unit in your areas was under 600 ft\u00b2. 2BR list didn't load.",
+    "n": "RentSFNow (Veritas)",
+    "st": "partial"
+   },
+   {
+    "d": "No rentals on Craigslist or listing sites.",
+    "n": "1598 Bay St watch",
+    "st": "ok"
+   },
+   {
+    "d": "Not checked this run; its building prices have been stale.",
+    "n": "Zumper",
+    "st": "skipped"
+   },
+   {
+    "d": "Left alone after the Oct 10 block; building sites cover the same buildings.",
+    "n": "Apartments.com",
+    "st": "skipped"
+   }
+  ],
+  "summary": "Two Mission Bay units can start in your window (Avalon 955 ft\u00b2 1BR $4,695 from Dec 15, MB360 839 ft\u00b2 1BR $5,607), plus a Windsor 2BR on Jan 7 that's $244 over max. New 2BRs at 4044 26th St (Noe) and 240 Dolores. Added Greystar as a source and 1598 Bay St as a building watch.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-11T16:20:00Z",
   "goneCount": 1,
   "newCount": 5,
