@@ -102,6 +102,9 @@ details.sec[open]>summary h2::before{content:"\2212  "}
 .flagchips{display:flex;flex-wrap:wrap;gap:6px}
 .card.flash{box-shadow:0 0 0 3px var(--accent)}
 .card.dim .media,.card.dim .main{opacity:.5}
+.card.back{box-shadow:0 0 0 2px var(--win)}
+.backbar{margin:0 0 10px;padding:8px 10px;border-radius:8px;background:var(--win-soft);color:var(--win);font-size:13px;font-weight:600;line-height:1.35}
+.backbar span{font-weight:400}
 .media{position:relative;background:var(--water);min-height:220px;border-right:1px solid var(--line)}
 .media img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .media .mini{position:absolute;inset:0;width:100%;height:100%}
@@ -398,7 +401,7 @@ var AREAS=[
   {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated. Exception: managed buildings you put on the watchlist, like Chorus and The Brady at Market and Van Ness."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-12T02:00:59Z", RUNS=[];
+var BUILT="2026-10-12T02:13:05Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
 
@@ -427,12 +430,14 @@ function score(x){
   var s=0,k=fit(x); s+= k==="in"?60:k==="after"?25:0;
   s+= x.t===1?20:x.t===2?10:0;
   s+= x.bd>=2?18:0; s+= x.sf?Math.min(x.sf,1000)/30:10; s+= x.l==="unit"?10:x.l==="bldg"?5:0; s+= x.pk?6:0;
-  if(x.r!=null&&x.r+UTIL>6000)s-=6; if(has(x,"verify")||has(x,"edge"))s-=8; return s;
+  if(x.r!=null&&x.r+UTIL>6000)s-=6; if(has(x,"verify")||has(x,"edge"))s-=8; if(isBack(x))s+=40; return s;
 }
 function proj(lat,lng){return [(lng-PROJ.lon0)*PROJ.c*PROJ.k,(PROJ.lat0-lat)*PROJ.k]}
 function pinClass(x){var k=fit(x);return k==="in"?"in":k==="after"?"after":"unk"}
 function norm(v){v=v||{};var o={want:!!v.want,sent:!!v.sent,pass:!!v.pass,sentOn:v.sentOn||"",passOn:v.passOn||"",notes:Array.isArray(v.notes)?v.notes:[]};if(v.s&&o.hasOwnProperty(v.s))o[v.s]=true;return o}
 function rec(id){return norm(TRK[id])}
+/* a listing came back (relisted or new move-in date) after you passed on it or it was taken down */
+function isBack(x){var b=x.back; if(!b||!b.on||x.gone)return false; var r=rec(x.id); return !(r.pass&&r.passOn&&r.passOn>b.on)}
 
 /* storage: the artifact database in Claude, browser storage everywhere else */
 var KEY="sfhunt-track-v2";
@@ -465,12 +470,12 @@ async function delNote(id,i){
 
 function visible(x){
   if(x.gone&&!state.gone)return false;
-  var k=fit(x); if(k==="early"){var rr=rec(x.id); if(!(rr.want||rr.sent||rr.pass||rr.notes.length))return false}
+  var k=fit(x), bk=isBack(x); if(k==="early"&&!bk){var rr=rec(x.id); if(!(rr.want||rr.sent||rr.pass||rr.notes.length))return false}
   if(state.two&&x.bd<2)return false;
   if(state.unit&&x.l!=="unit")return false;
   if(state.park&&!x.pk)return false;
   if(state.allin&&(x.r==null||x.r+UTIL>6000))return false;
-  if(state.hide&&rec(x.id).pass)return false;
+  if(state.hide&&rec(x.id).pass&&!bk)return false;
   return true;
 }
 var CMP={
@@ -498,7 +503,7 @@ function drawBigMap(shown){
   MAPLABELS.forEach(function(l){svg+='<text class="lbl" x="'+l[1]+'" y="'+l[2]+'">'+esc(l[0])+'</text>'});
   shown.slice().reverse().forEach(function(o){
     var x=o.x; if(x.lat==null)return; var p=proj(x.lat,x.lng);
-    svg+='<g class="pin '+pinClass(x)+(rec(x.id).pass?" pass":"")+'" tabindex="0" role="button" data-id="'+esc(x.id)+'" aria-label="'+esc(o.n+". "+x.a)+'"><circle class="dot" cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="8.5"/><text x="'+p[0].toFixed(1)+'" y="'+p[1].toFixed(1)+'">'+o.n+'</text></g>';
+    svg+='<g class="pin '+pinClass(x)+(rec(x.id).pass&&!isBack(x)?" pass":"")+'" tabindex="0" role="button" data-id="'+esc(x.id)+'" aria-label="'+esc(o.n+". "+x.a)+'"><circle class="dot" cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="8.5"/><text x="'+p[0].toFixed(1)+'" y="'+p[1].toFixed(1)+'">'+o.n+'</text></g>';
   });
   svg+='</svg>';
   var host=document.getElementById("bigmap"); host.innerHTML=svg;
@@ -512,7 +517,8 @@ function drawBigMap(shown){
 function tag(t,c){return el("span","tag"+(c?" "+c:""),t)}
 function card(x,n){
   var r=rec(x.id), k=fit(x);
-  var c=el("article","card"+(r.pass||x.gone?" dim":"")); c.id="card-"+x.id;
+  var bk=isBack(x);
+  var c=el("article","card"+(bk?" back":(r.pass||x.gone)?" dim":"")); c.id="card-"+x.id;
   var media=el("div","media");
   var mm=miniMap(x);
   if(x.img){
@@ -526,6 +532,7 @@ function card(x,n){
   c.appendChild(media);
 
   var m=el("div","main");
+  if(bk){var bb=el("div","backbar","Back on the market"+(x.back.on?" "+fmtDate(x.back.on):"")+". "); bb.appendChild(el("span",null,(x.back.why||"Relisted")+(x.back.was!=null?": move-in was "+(x.back.was?fmtDate(x.back.was):"not listed")+", now "+bigDate(x)+".":".")+(r.pass?" You passed on it"+(r.passOn?" "+fmtDate(r.passOn):"")+"; still marked Pass.":""))); m.appendChild(bb)}
   var hr=el("div","headrow");
   var mv=el("div","movein "+(k==="in"?"in":k==="after"?"after":"unk"));
   var mvL=el("div"); mvL.appendChild(el("div","cal","Move-in")); mvL.appendChild(el("div","dt",bigDate(x)));
@@ -540,6 +547,7 @@ function card(x,n){
   m.appendChild(el("div","specs",x.bd+" bd · "+x.ba+" ba · "+(x.sf?x.sf+" ft²":"size not listed")+(x.sf&&x.r?" · $"+(x.r/x.sf).toFixed(2)+"/ft²":"")));
   var ch=el("div","chips");
   if(x.gone)ch.appendChild(tag("Taken down","bad"));
+  if(bk)ch.appendChild(tag("Back on the market","good"));
   if(x.firstSeen&&x.firstSeen>="2026-10-09"&&(new Date()-new Date(x.firstSeen))/864e5<4)ch.appendChild(tag("New","good"));
   ch.appendChild(x.l==="unit"?tag("W/D in unit","good"):x.l==="bldg"?tag("Laundry in building"):tag("Laundry not stated","q"));
   ch.appendChild(x.pk?tag("Parking: "+x.p,"good"):tag("Parking: "+(x.p||"?"),"q"));
@@ -617,18 +625,21 @@ function render(){
   if(!loaded){groups.innerHTML="";groups.appendChild(el("p","empty",mode==="none"?"Couldn't load the listings data.":"Loading listings..."));return}
   var wasOpen={}; document.querySelectorAll("details.sec[id]").forEach(function(e){wasOpen[e.id]=e.open});
   var vis=L.filter(visible), cmp=CMP[state.sort];
+  var gback=vis.filter(isBack).sort(cmp); vis=vis.filter(function(x){return !isBack(x)});
   var gin=vis.filter(function(x){return fit(x)==="in"}).sort(cmp);
   var gafter=vis.filter(function(x){var k=fit(x);return k==="after"||k==="late"}).sort(cmp);
   var gunk=vis.filter(function(x){return fit(x)==="unk"}).sort(cmp);
   var gearly=vis.filter(function(x){return fit(x)==="early"}).sort(cmp);
   groups.innerHTML="";
-  groups.appendChild(section("In your window","Move-in Dec 15 to Feb 1",gin,1,false));
-  if(gafter.length)groups.appendChild(section("Just after","Early February; worth asking if they'll start sooner",gafter,gin.length+1,false));
-  var d=section("No move-in date listed","Usually means available now. Ask if they'd hold until mid-December · "+gunk.length,gunk,gin.length+gafter.length+1,true);
+  var o0=gback.length;
+  if(o0)groups.appendChild(section("Back on the market","Places you passed on or that were taken down, now relisted or with a new move-in date",gback,1,false));
+  groups.appendChild(section("In your window","Move-in Dec 15 to Feb 1",gin,o0+1,false));
+  if(gafter.length)groups.appendChild(section("Just after","Early February; worth asking if they'll start sooner",gafter,o0+gin.length+1,false));
+  var d=section("No move-in date listed","Usually means available now. Ask if they'd hold until mid-December · "+gunk.length,gunk,o0+gin.length+gafter.length+1,true);
   d.id="sec-unk"; if(wasOpen["sec-unk"])d.open=true;
   groups.appendChild(d);
-  if(gearly.length){var de=section("Tracked, before your window","Move-in before Dec 15. Kept here because you contacted, passed or noted them · "+gearly.length,gearly,gin.length+gafter.length+gunk.length+1,true);de.id="sec-early";if(wasOpen["sec-early"])de.open=true;groups.appendChild(de)}
-  var shown=[].concat(gin,gafter,gunk,gearly).map(function(x,i){return {x:x,n:i+1}});
+  if(gearly.length){var de=section("Tracked, before your window","Move-in before Dec 15. Kept here because you contacted, passed or noted them · "+gearly.length,gearly,o0+gin.length+gafter.length+gunk.length+1,true);de.id="sec-early";if(wasOpen["sec-early"])de.open=true;groups.appendChild(de)}
+  var shown=[].concat(gback,gin,gafter,gunk,gearly).map(function(x,i){return {x:x,n:i+1}});
   drawBigMap(shown);
   var active=L.filter(function(x){return !x.gone&&fit(x)!=="early"});
   document.getElementById("st-win").textContent=active.filter(function(x){return fit(x)==="in"}).length;
