@@ -155,6 +155,19 @@
   "sentOn": "",
   "want": false
  },
+ "avalon-mission-bay-255-king-306": {
+  "notes": [
+   {
+    "d": "2026-10-11",
+    "t": "reasonable to keep an eye on"
+   }
+  ],
+  "pass": false,
+  "passOn": "",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
  "cervantes-near-avila": {
   "notes": [],
   "pass": false,
@@ -174,6 +187,14 @@
   "passOn": "2026-10-10",
   "sent": true,
   "sentOn": "2026-10-10",
+  "want": false
+ },
+ "mission-bay-by-windsor-360-berry-st": {
+  "notes": [],
+  "pass": true,
+  "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
   "want": false
  },
  "one-henry-adams": {
