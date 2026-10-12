@@ -1,4 +1,56 @@
 {
+ "106-sanchez-st-2": {
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Too expensive to justify location"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-12",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "1395-golden-gate-ave-204": {
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Doable maybe"
+   }
+  ],
+  "pass": false,
+  "passOn": "",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "1425-taylor-st-201": {
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Doable maybe"
+   }
+  ],
+  "pass": false,
+  "passOn": "",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "14th-ave-near-geary": {
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Available now"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-12",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
  "1624-vallejo-st": {
   "notes": [
    {
@@ -129,6 +181,32 @@
   "sentOn": "",
   "want": false
  },
+ "655-stockton-st-202": {
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Too expensive for ~600 sq ft"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-12",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "78-buchanan-st-104": {
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Horrid bathroom. Too expensive for too little sq ft"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-12",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
  "795-pine-st-44": {
   "notes": [
    {
@@ -136,8 +214,8 @@
     "t": "Not bad for 2BR! Listed 15 days ago as of this note being written so assume it's snatched and/or not avail for our move-in timeline."
    }
   ],
-  "pass": false,
-  "passOn": "",
+  "pass": true,
+  "passOn": "2026-10-12",
   "sent": false,
   "sentOn": "",
   "want": false
@@ -193,6 +271,19 @@
   "notes": [],
   "pass": true,
   "passOn": "2026-10-11",
+  "sent": false,
+  "sentOn": "",
+  "want": false
+ },
+ "noe-valley-2br-wd-special": {
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Going to contact but not crazy about location"
+   }
+  ],
+  "pass": true,
+  "passOn": "2026-10-12",
   "sent": false,
   "sentOn": "",
   "want": false
