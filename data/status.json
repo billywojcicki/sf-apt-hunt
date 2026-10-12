@@ -181,6 +181,19 @@
   "sentOn": "",
   "want": false
  },
+ "512-cole-st": {
+  "want": false,
+  "sent": true,
+  "pass": false,
+  "sentOn": "2026-10-12",
+  "passOn": "",
+  "notes": [
+   {
+    "d": "2026-10-12",
+    "t": "Probably a scam"
+   }
+  ]
+ },
  "655-stockton-st-202": {
   "notes": [
    {
