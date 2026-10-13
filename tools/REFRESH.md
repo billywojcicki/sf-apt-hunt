@@ -40,6 +40,7 @@ Write only facts seen on the page. No em dashes, no emojis.
 
 1. Read the current data: `listings`, `status`, `runs` (ArtifactData list with `out_dir`). Build a set of known URLs and Craigslist post ids.
 2. Craigslist: search `https://sfbay.craigslist.org/search/sfc/apa?max_price=6000&min_bedrooms=1` (plus `&minSqft=600` and laundry filters, and queries like `january`, `december`). Parse `li.cl-static-search-result`. Open only new posts in included areas. From each post read the attributes line (beds, baths, ft2, "available <date>", laundry, parking), `.mapaddress`, the posted and updated times (`time.date`, `.postinginfo`), and the first photo URL.
+   - Skip post ids already in `tools/cl_seen.json`, and add every id you saw this run to it before leaving the Craigslist page (navigating away loses the page's variables).
    - Always read the whole `#postingbody`, never a trimmed excerpt. Move-in dates are often only in the description ("Available now" in a bullet list, "Move in date: Jan 1", "ready mid-December"). Scan it for avail, move-in, ready, vacant, now, immediately, month names and dates like 1/15. If the description's date differs from the attributes line, use the description and say so in the note.
    - For J. Wavro posts, also open the linked jwavro.com rental page; it shows "Available Now" or a date even when the post doesn't.
 3. Watch for comebacks. Every listing the user passed on (status `pass`) or that went `gone` stays watched, whatever its date:
