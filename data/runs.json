@@ -1,6 +1,51 @@
 [
  {
   "approx": false,
+  "at": "2026-10-14T03:30:00Z",
+  "goneCount": 0,
+  "newCount": 0,
+  "sources": [
+   {
+    "d": "5 searches and 14 new posts read in full with gaps; no block. None fit: all available now or under 600 ft\u00b2 (another batch of 410 to 614 ft\u00b2 1BRs from one landlord).",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "1105 Shrader (Nov 1) reposted at a higher price; 1401 Jones reposted, still now. Nothing passed came back with a later date.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#0T2-210 no longer listed. #00M-426 quotes Dec 15 at $4,685 (12 months).",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "Same four 1BRs quotable for your window; best is #1-339 941 ft\u00b2 $5,569.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "No change: Jan 2BRs $6,438 and $6,573.",
+    "n": "Mission Bay by Windsor",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing starting Dec 15 or later; latest starts Dec 6, Nov 30, Oct 22, Nov 15.",
+    "n": "Chorus, The Brady, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing new in your areas or window.",
+    "n": "Greystar search",
+    "st": "ok"
+   }
+  ],
+  "summary": "No new Craigslist fits. Avalon's 955 ft\u00b2 Dec 15 unit was leased; its replacement #00M-426 (798 ft\u00b2, W/D) quotes a Dec 15 start at $4,685. MB360's 941 ft\u00b2 1BR at $5,569 is still quotable for your window.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-13T16:00:00Z",
   "goneCount": 0,
   "newCount": 0,
