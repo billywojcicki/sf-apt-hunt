@@ -316,7 +316,7 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
     <button class="chip" type="button" id="f-unit" aria-pressed="false">In-unit W/D</button>
     <button class="chip" type="button" id="f-park" aria-pressed="false">Parking</button>
     <button class="chip" type="button" id="f-allin" aria-pressed="false">Under $6k all-in</button>
-    <button class="chip" type="button" id="f-hide" aria-pressed="false">Hide passed</button>
+    <button class="chip" type="button" id="f-hide" aria-pressed="true">Hide passed</button>
     <button class="chip" type="button" id="f-gone" aria-pressed="false">Show taken down</button>
     <span class="count" id="count"></span>
   </div>
@@ -401,9 +401,9 @@ var AREAS=[
   {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated. Exception: managed buildings you put on the watchlist, like Chorus and The Brady at Market and Van Ness."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-14T18:11:04Z", RUNS=[];
+var BUILT="2026-10-14T18:12:52Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
-var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
+var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:true,gone:false};
 
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}

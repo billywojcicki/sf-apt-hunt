@@ -307,7 +307,7 @@ h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),va
     <button class="chip" type="button" id="f-unit" aria-pressed="false">In-unit W/D</button>
     <button class="chip" type="button" id="f-park" aria-pressed="false">Parking</button>
     <button class="chip" type="button" id="f-allin" aria-pressed="false">Under $6k all-in</button>
-    <button class="chip" type="button" id="f-hide" aria-pressed="false">Hide passed</button>
+    <button class="chip" type="button" id="f-hide" aria-pressed="true">Hide passed</button>
     <button class="chip" type="button" id="f-gone" aria-pressed="false">Show taken down</button>
     <span class="count" id="count"></span>
   </div>
@@ -394,7 +394,7 @@ var AREAS=[
 ];
 var BUILT="/*__BUILT__*/", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
-var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:false,gone:false};
+var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:true,gone:false};
 
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
