@@ -1,6 +1,51 @@
 [
  {
   "approx": false,
+  "at": "2026-10-14T18:00:00Z",
+  "goneCount": 0,
+  "newCount": 0,
+  "sources": [
+   {
+    "d": "5 searches and 8 posts read in full with gaps; no block. New: J. Wavro Polk Gulch 2BR (available now), Laurel Village 2BR/2BA (Oct 16), Lower Pac Heights 2BR (now); none in your window.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "2055 Sacramento (still Dec 22), 78 Buchanan, 655 Stockton reposted; no later dates. 1425 Taylor now Oct 26, 1395 Golden Gate still no date.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#00H-614 854 ft\u00b2 quotes Dec 15 at $4,775; #00M-426 still listed.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "No change; #1-339 941 ft\u00b2 $5,569 still quotable.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "Jan 2BRs now $6,474 and $6,609.",
+    "n": "Mission Bay by Windsor",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing starting Dec 15 or later.",
+    "n": "Chorus and The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Checked last night; nothing in your window.",
+    "n": "Strata, Venue, Greystar",
+    "st": "skipped"
+   }
+  ],
+  "summary": "No new Craigslist fits. Avalon added a bigger 1BR (#00H-614, 854 ft\u00b2, W/D) that quotes a Dec 15 start at $4,775. 1425 Taylor (your 'doable maybe') now says available Oct 26. Windsor's Jan 2BRs crept up again.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-14T03:30:00Z",
   "goneCount": 0,
   "newCount": 0,
