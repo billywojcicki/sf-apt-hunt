@@ -1,6 +1,56 @@
 [
  {
   "approx": false,
+  "at": "2026-10-15T17:30:00Z",
+  "goneCount": 0,
+  "newCount": 1,
+  "sources": [
+   {
+    "d": "5 searches and 16 posts read in full with gaps; no block. One landlord reposted about 30 units. New fit: 2600 Van Ness renovated 1BR (flexible start). Others start now to Nov 14.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Many reposts; none passed came back with a later date.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "New #A-303 2BR 947 ft\u00b2 $5,360, Dec 7.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#00H-614 and #00M-426 still listed.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "#1-504 gone; #1-339 941 ft\u00b2 $5,569 still quotable.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "Jan 2BRs now $6,485 and $6,620.",
+    "n": "Mission Bay by Windsor",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing starting Dec 15 or later.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing new in your areas or window.",
+    "n": "Greystar search",
+    "st": "ok"
+   }
+  ],
+  "summary": "The Brady listed a 2BR (947 ft\u00b2, $5,360) starting Dec 7, its first near your window. New: renovated 2600 Van Ness 1BR with W/D, mid-Nov but flexible start. 1395 Golden Gate #204 is listed as available now. MB360 lost its 839 ft\u00b2 unit; the 941 ft\u00b2 one is still quotable.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-14T18:00:00Z",
   "goneCount": 0,
   "newCount": 0,
