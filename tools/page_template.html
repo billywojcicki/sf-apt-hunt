@@ -127,6 +127,7 @@ h3 a{text-decoration:none;background-image:linear-gradient(var(--line),var(--lin
 h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),var(--accent))}
 .sub{color:var(--muted);font-size:13.5px}
 .specs{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums}
+.listed{font-size:12px;color:var(--muted);margin-top:2px}
 .chips{display:flex;flex-wrap:wrap;gap:5px}
 .tag{font-size:12px;font-weight:500;padding:2px 9px;border-radius:999px;background:var(--soft);border:1px solid var(--line);white-space:nowrap}
 .tag.good{background:var(--win-soft);border-color:transparent;color:var(--win)}
@@ -536,6 +537,7 @@ function card(x,n){
   var bdx=bigDate(x).replace("?","");
   m.appendChild(el("div","sub",x.h+(x.av&&!/^(now|ask)$/i.test(x.av)&&x.av.indexOf(bdx)!==0?" · listing says “"+x.av+"”":"")));
   m.appendChild(el("div","specs",x.bd+" bd · "+x.ba+" ba · "+(x.sf?x.sf+" ft²":"size not listed")+(x.sf&&x.r?" · $"+(x.r/x.sf).toFixed(2)+"/ft²":"")));
+  if(x.posted){var dd=Math.round((new Date(today())-new Date(x.posted))/864e5); m.appendChild(el("div","listed","Listed "+fmtDate(x.posted,true)+(dd<=0?" (today)":dd===1?" (1 day ago)":" ("+dd+" days ago)")+(x.updated&&x.updated>x.posted?" · updated "+fmtDate(x.updated,true):"")))}
   var ch=el("div","chips");
   if(x.gone)ch.appendChild(tag("Taken down","bad"));
   if(bk)ch.appendChild(tag("Back on the market","good"));

@@ -133,6 +133,7 @@ h3 a{text-decoration:none;background-image:linear-gradient(var(--line),var(--lin
 h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),var(--accent))}
 .sub{color:var(--muted);font-size:13.5px}
 .specs{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums}
+.listed{font-size:12px;color:var(--muted);margin-top:2px}
 .chips{display:flex;flex-wrap:wrap;gap:5px}
 .tag{font-size:12px;font-weight:500;padding:2px 9px;border-radius:999px;background:var(--soft);border:1px solid var(--line);white-space:nowrap}
 .tag.good{background:var(--win-soft);border-color:transparent;color:var(--win)}
@@ -401,7 +402,7 @@ var AREAS=[
   {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated. Exception: managed buildings you put on the watchlist, like Chorus and The Brady at Market and Van Ness."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-15T22:52:46Z", RUNS=[];
+var BUILT="2026-10-16T00:21:57Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:true,gone:false};
 
@@ -545,6 +546,7 @@ function card(x,n){
   var bdx=bigDate(x).replace("?","");
   m.appendChild(el("div","sub",x.h+(x.av&&!/^(now|ask)$/i.test(x.av)&&x.av.indexOf(bdx)!==0?" · listing says “"+x.av+"”":"")));
   m.appendChild(el("div","specs",x.bd+" bd · "+x.ba+" ba · "+(x.sf?x.sf+" ft²":"size not listed")+(x.sf&&x.r?" · $"+(x.r/x.sf).toFixed(2)+"/ft²":"")));
+  if(x.posted){var dd=Math.round((new Date(today())-new Date(x.posted))/864e5); m.appendChild(el("div","listed","Listed "+fmtDate(x.posted,true)+(dd<=0?" (today)":dd===1?" (1 day ago)":" ("+dd+" days ago)")+(x.updated&&x.updated>x.posted?" · updated "+fmtDate(x.updated,true):"")))}
   var ch=el("div","chips");
   if(x.gone)ch.appendChild(tag("Taken down","bad"));
   if(bk)ch.appendChild(tag("Back on the market","good"));
