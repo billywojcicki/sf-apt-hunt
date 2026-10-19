@@ -1,6 +1,66 @@
 [
  {
   "approx": false,
+  "at": "2026-10-19T20:30:00Z",
+  "goneCount": 17,
+  "newCount": 6,
+  "sources": [
+   {
+    "d": "6 searches (501 posts), 39 read in full plus 25 rechecks with gaps; no block. Nearly everything new starts now to Nov 10.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "1450 Golden Gate #201 relisted with a later date. 2055 Sacramento, 78 Buchanan, 106 Sanchez, 655 Stockton, 252 9th and Powell near Bay reposted with the same or earlier dates.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "Dec 15 quotes: #0T1-910 $4,655, #00M-522 $4,630, #00M-426 $4,705, #00H-614 $4,785.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "#1-339 941 ft\u00b2 $5,569 still quotable; #1-318 840 ft\u00b2 $5,607 added.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "#A-303 (Dec 7) gone; latest unit Nov 30.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Only Chorus #0543 2BR Jan 15 at $8,147.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Same Jan 2BRs, over max.",
+    "n": "Mission Bay by Windsor",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing on Craigslist.",
+    "n": "1598 Bay St",
+    "st": "ok"
+   },
+   {
+    "d": "Site redesigned; current SF list is mostly studios and over-max homes.",
+    "n": "J. Wavro",
+    "st": "ok"
+   },
+   {
+    "d": "Skipped this run.",
+    "n": "Greystar search",
+    "st": "skipped"
+   }
+  ],
+  "summary": "Back on the market: 1450 Golden Gate #201 (now Oct 23). Avalon at Mission Bay has a new best Dec 15 quote: #0T1-910, 856 ft\u00b2 at $4,655. The Brady's Dec 7 2BR is gone. Six new no-date listings, including a 900 ft\u00b2 Hayes Valley 2BR and a 1,040 ft\u00b2 Pac Heights condo. 17 old posts came down.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-15T17:30:00Z",
   "goneCount": 0,
   "newCount": 1,
