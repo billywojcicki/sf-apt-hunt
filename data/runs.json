@@ -1,6 +1,56 @@
 [
  {
   "approx": false,
+  "at": "2026-10-20T19:30:00Z",
+  "goneCount": 1,
+  "newCount": 2,
+  "sources": [
+   {
+    "d": "7 searches (489 posts, 150 new), 47 read in full plus 12 rechecks with gaps; no block. Almost all new posts start now to Nov 1.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Reposts of 78 Buchanan, 645 Stockton, 1395 Golden Gate, 1450 Golden Gate, 106 Sanchez and 2011 Sacramento; no new later dates on passed ones.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#A-303 back, Dec 7, $5,329.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#0T1-910 Dec 15 quote $4,650.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "Only Chorus #0543 2BR Jan 15 at $8,147.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "New: 1000 Chestnut, Clay Park Tower, 2000 Broadway; all units start by Nov 23 or are over max.",
+    "n": "Greystar search",
+    "st": "ok"
+   },
+   {
+    "d": "Passed; checked Oct 19.",
+    "n": "Mission Bay by Windsor",
+    "st": "skipped"
+   }
+  ],
+  "summary": "New in your window: an owner-posted Glen Park 1BR, 720 ft\u00b2, W/D, mid-December, $2,500 with utilities (cheap enough to verify in person). The Brady relisted #A-303 2BR 947 ft\u00b2 at $5,329 from Dec 7. Avalon #0T1-910 is now $4,650 for Dec 15. The Pacific condo came down; the Page St 2BR is now listed as available now.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-19T20:30:00Z",
   "goneCount": 17,
   "newCount": 6,
