@@ -1,6 +1,51 @@
 [
  {
   "approx": false,
+  "at": "2026-10-21T19:00:00Z",
+  "goneCount": 1,
+  "newCount": 0,
+  "sources": [
+   {
+    "d": "8 searches (537 posts, 188 new, many out-of-area spam), 28 read in full plus 12 rechecks; no block. A batch of 7 NOPA \"condos\" with W/D and garage at $4,500 to $5,800 copy for-sale listing text, so skipped as likely scams.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "2718 Sutter relisted with no date.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#A-303 still listed, Dec 7, $5,329.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#0T1-910 still $4,650 for Dec 15.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing on Craigslist.",
+    "n": "1598 Bay St",
+    "st": "ok"
+   }
+  ],
+  "summary": "Back on the market: 2718 Sutter St top-floor 2BR, 750 ft\u00b2, $4,500, now with no date. The Glen Park $2,500 1BR was reposted at $1,500, a strong scam signal. 2419 Divisadero came down. No new in-window listings; Avalon, MB360 and the Brady are unchanged.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-20T19:30:00Z",
   "goneCount": 1,
   "newCount": 2,
