@@ -1,6 +1,56 @@
 [
  {
   "approx": false,
+  "at": "2026-10-22T19:00:00Z",
+  "goneCount": 1,
+  "newCount": 0,
+  "sources": [
+   {
+    "d": "8 searches (530 posts, 192 new), 14 read in full plus 13 rechecks; no block. New posts start now to Nov 1, or are short-term sublets or likely scams.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "1675 Clay relisted with a later date (Oct 27).",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#426 $4,599 Dec 25; #607 $4,613 Dec 18; #814 $5,905 Dec 5.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "#A-303 $5,299, Dec 7.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#0T1-910 $4,655 for Dec 15.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "#2-403 gone; others unchanged.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "Only Chorus Jan units over max.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing on Craigslist.",
+    "n": "1598 Bay St",
+    "st": "ok"
+   }
+  ],
+  "summary": "Channel Mission Bay has in-window 1BRs: #426 607 ft\u00b2 $4,599 (Dec 25) and #607 587 ft\u00b2 $4,613 (Dec 18). Back on the market: 1675 Clay 2BR remodel, now Oct 27. Brady A-303 dipped to $5,299. No new in-window Craigslist listings.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-21T19:00:00Z",
   "goneCount": 1,
   "newCount": 0,
