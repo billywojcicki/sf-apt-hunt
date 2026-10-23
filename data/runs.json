@@ -1,6 +1,61 @@
 [
  {
   "approx": false,
+  "at": "2026-10-23T19:00:00Z",
+  "goneCount": 1,
+  "newCount": 3,
+  "sources": [
+   {
+    "d": "8 searches (520 posts, 266 new, mostly reposts), 18 read in full plus 13 rechecks; no block.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "1060 Bush reposted as available now (no comeback). 2718 Sutter came down again.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#521 Jan 16 $5,518; #617 Dec 25 $5,529; #426 Dec 25 $4,599.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "#0T1-910 gone; #00L-504 $4,470 for Dec 15.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "#0342 1BR 799 ft\u00b2 $5,108, Dec 6.",
+    "n": "Chorus (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#A-303 gone; latest Nov 30.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing Dec+.",
+    "n": "Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing on Craigslist.",
+    "n": "1598 Bay St",
+    "st": "ok"
+   }
+  ],
+  "summary": "Channel Mission Bay added #521 758 ft\u00b2 $5,518 starting Jan 16 plus #617 648 ft\u00b2 $5,529 (Dec 25). Avalon #0T1-910 was leased, but #00L-504 742 ft\u00b2 quotes $4,470 for Dec 15. Chorus listed a 1BR 799 ft\u00b2 $5,108 from Dec 6. Brady A-303 gone again. Three new Noe Valley no-date listings, including a $4,295 2BR on 24th St.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-22T19:00:00Z",
   "goneCount": 1,
   "newCount": 0,
