@@ -1,6 +1,56 @@
 [
  {
   "approx": false,
+  "at": "2026-10-24T19:00:00Z",
+  "goneCount": 0,
+  "newCount": 3,
+  "sources": [
+   {
+    "d": "8 searches (607 posts, 261 new, mostly reposts), 16 read in full plus 15 rechecks; no block. Most new posts start Oct 25 to Nov 15.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "None.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#521 $5,568 Jan 16; #617 $5,526 Dec 25; #426 $4,549 Dec 25.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "#00L-504 $4,470 for Dec 15; new #0T2-804 Dec 4.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "Chorus #0342 $5,172 Dec 6; Strata #317 1BR 912 ft\u00b2 $6,161 Dec 8 (over max).",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "No change for 1BRs.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing on Craigslist.",
+    "n": "1598 Bay St",
+    "st": "ok"
+   }
+  ],
+  "summary": "Three new no-date listings: 2038 Divisadero 2BR/1.5BA 900 ft\u00b2 with W/D at $4,940, a quiet backyard-facing NoPa 1BR (700 ft\u00b2, $4,495), and a Glen Park 1BR with side yard ($4,200). Channel prices moved about $50 (#521 Jan 16 now $5,568, #426 $4,549). Avalon #00L-504 still $4,470 for Dec 15.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-23T19:00:00Z",
   "goneCount": 1,
   "newCount": 3,
