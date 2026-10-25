@@ -402,7 +402,7 @@ var AREAS=[
   {k:"out",tag:"Left out",t:"Street homelessness and drug activity",a:["Tenderloin","Civic Center / UN Plaza","Mid-Market","6th St","Tendernob (south of Bush, east of Larkin)","Hayes Valley east of Gough","16th St and 24th St BART plazas","Mission St corridor"],w:"The areas where it's concentrated. Exception: managed buildings you put on the watchlist, like Chorus and The Brady at Market and Van Ness."},
   {k:"out",tag:"Left out",t:"Other reasons",a:["Union Square","Financial District","Chinatown","Haight St strip (Haight-Ashbury)","Outer Richmond","Outer Sunset","Excelsior","Bayview","Visitacion Valley"],w:"Empty at night, few units that fit, a rough commercial strip, or too far from where you'd spend time."}
 ];
-var BUILT="2026-10-24T23:51:40Z", RUNS=[];
+var BUILT="2026-10-25T00:51:59Z", RUNS=[];
 var L=[], TRK={}, meta=null, store=null, loaded=false, mode="";
 var state={sort:"fit",two:false,unit:false,park:false,allin:false,hide:true,gone:false};
 
@@ -638,7 +638,7 @@ function render(){
   groups.appendChild(section("In your window","Move-in Dec 15 to Feb 1",gin,o0+1,false));
   if(gafter.length)groups.appendChild(section("Just after","Early February; worth asking if they'll start sooner",gafter,o0+gin.length+1,false));
   var d=section("No move-in date listed","Usually means available now. Ask if they'd hold until mid-December · "+gunk.length,gunk,o0+gin.length+gafter.length+1,true);
-  d.id="sec-unk"; if(wasOpen["sec-unk"])d.open=true;
+  d.id="sec-unk"; d.open=("sec-unk" in wasOpen)?wasOpen["sec-unk"]:true;
   groups.appendChild(d);
   if(gearly.length){var de=section("Tracked, before your window","Move-in before Dec 15. Kept here because you contacted, passed or noted them · "+gearly.length,gearly,o0+gin.length+gafter.length+gunk.length+1,true);de.id="sec-early";if(wasOpen["sec-early"])de.open=true;groups.appendChild(de)}
   var shown=[].concat(gback,gin,gafter,gunk,gearly).map(function(x,i){return {x:x,n:i+1}});
