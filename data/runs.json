@@ -1,6 +1,51 @@
 [
  {
   "approx": false,
+  "at": "2026-10-26T19:00:00Z",
+  "goneCount": 4,
+  "newCount": 4,
+  "sources": [
+   {
+    "d": "8 searches (545 posts, 172 new, mostly Brick+Timber reposts), 10 read in full plus 30 Monday rechecks; no block.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "923 Capp reposted as available now (no comeback).",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "No real change; #521 Jan 16 $5,568.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "#00L-504 $4,480 for Dec 15.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "New #2-102 989 ft\u00b2 $5,527 and #2-305 841 ft\u00b2 $5,359 (Dec 5).",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "No real change.",
+    "n": "Chorus, Strata, Venue, Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Nothing on Craigslist.",
+    "n": "1598 Bay St",
+    "st": "ok"
+   }
+  ],
+  "summary": "Four new no-date listings: a 1,200 ft\u00b2 2BR flat by USF with W/D ($5,500), a Lone Mountain 2BR with garage ($4,995), a top-floor Marina 1BR on Toledo Way ($5,595) and a 700 ft\u00b2 1BR on Van Ness ($4,200). MB360 added a 989 ft\u00b2 1BR ($5,527) and an 841 ft\u00b2 one opening Dec 5 ($5,359). Monday recheck took down 4 old posts. 3322 Buchanan dropped to $5,495.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-24T19:00:00Z",
   "goneCount": 0,
   "newCount": 3,
