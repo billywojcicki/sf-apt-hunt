@@ -1,6 +1,31 @@
 [
  {
   "approx": false,
+  "at": "2026-10-28T02:00:00Z",
+  "goneCount": 0,
+  "newCount": 2,
+  "sources": [
+   {
+    "d": "8 searches (518 posts, 128 new), 8 read in full; no block.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "New #432 Jan 1 $5,329; #211 Dec 11 $5,552.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "Checked this morning.",
+    "n": "Other watchlist buildings",
+    "st": "skipped"
+   }
+  ],
+  "summary": "Two new furnished Mission 2BRs near Valencia starting Jan 1: a garden-level unit on 17th ($4,180, 800 ft\u00b2) and a stand-alone cottage on 18th ($4,360). Channel added #432 644 ft\u00b2 $5,329 starting Jan 1 and #211 745 ft\u00b2 $5,552 from Dec 11.",
+  "title": "Manual refresh (evening)"
+ },
+ {
+  "approx": false,
   "at": "2026-10-27T19:00:00Z",
   "goneCount": 1,
   "newCount": 3,
