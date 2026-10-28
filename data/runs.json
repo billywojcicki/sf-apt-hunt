@@ -1,6 +1,31 @@
 [
  {
   "approx": false,
+  "at": "2026-10-28T18:40:14Z",
+  "goneCount": 0,
+  "newCount": 1,
+  "sources": [
+   {
+    "d": "8 searches (508 posts, 85 new), 15 read in full; no block. Rechecks skipped since they ran this morning. Most new posts start now to Dec 1; a batch of 655 Powell units is under 400 ft\u00b2.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Reposts of 1675 Clay (Oct 31), 2171 Pacific, 1395 Golden Gate (passed, still now) and 1 Mallorca; no later dates on passed ones.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "Checked this morning; no recheck to keep page loads down.",
+    "n": "Watchlist buildings",
+    "st": "skipped"
+   }
+  ],
+  "summary": "No firm Dec 15 to Feb 1 move-ins. New: a 2BR/2BA view flat on Richland Ave in Bernal Heights with garage parking, $4,000, \"available December 2026\" with no exact date or photos yet. Reposts with small price drops: 2171 Pacific #207 to $5,245 (Oct 31) and 1 Mallorca Way #302 to $5,300 (now).",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-28T14:06:42Z",
   "goneCount": 4,
   "newCount": 1,
