@@ -1,6 +1,56 @@
 [
  {
   "approx": false,
+  "at": "2026-10-28T14:06:42Z",
+  "goneCount": 4,
+  "newCount": 1,
+  "sources": [
+   {
+    "d": "8 searches (515 posts, 52 new), 11 read in full, 24 rechecks; no block. Most new posts start now to mid-November.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Reposts of 2718 Sutter (no date) and 106 Sanchez (no date, $5,600); no later dates on passed ones.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "No new units; #432 still Jan 1 at $5,329.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "Latest start Nov 30; #A-313 2BR added Nov 22.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Chorus #0342 $5,208 Dec 6; Strata #317 1BR $6,161 Dec 8 (over max); Venue none.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#00L-504 Dec 15 quote still $4,480.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "New #1-420 1BR 739 ft\u00b2 $5,207 and #2-301 (Dec 6).",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   },
+   {
+    "d": "A Mission Bay 1BR+den condo at $3,150 with garage and no address was skipped as a likely scam.",
+    "n": "Mission Bay condo posts",
+    "st": "ok"
+   }
+  ],
+  "summary": "No new Dec 15 to Feb 1 move-ins. New with no date: 1800 Franklin #104, a renovated 640 ft\u00b2 Pac Heights 1BR at $3,995, ground floor, rent controlled. 106 Sanchez (passed) was reposted at $5,600, down $340. MB360 added a 739 ft\u00b2 1BR at $5,207. Four Craigslist listings came down: Golden Gate near Divisadero, 795 Pine, 1885 Pacific and 655 Stockton.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-28T02:00:00Z",
   "goneCount": 0,
   "newCount": 2,
