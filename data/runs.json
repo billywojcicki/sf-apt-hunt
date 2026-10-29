@@ -1,6 +1,51 @@
 [
  {
   "approx": false,
+  "at": "2026-10-29T15:21:41Z",
+  "goneCount": 5,
+  "newCount": 1,
+  "sources": [
+   {
+    "d": "8 searches (499 posts, 82 new), 7 read in full, 34 Thursday rechecks; no block. Nearly all new posts start now to late November.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Reposts of 1401 Jones (Nov 14, $4,700) and 1395 Golden Gate #204; no later dates on passed ones.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#432 Jan 1 up to $5,489; other units unchanged.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "Prices up about $40; latest start still Nov 30.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#00L-504 Dec 15 quote still $4,480; new #00M-828 860 ft\u00b2 opens Dec 10 from $5,108.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "#1-420 down to $5,187.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   }
+  ],
+  "summary": "No new Dec 15 to Feb 1 move-ins. New with no date: a 620 ft\u00b2 1BR at 1395 Golden Gate for $4,400, same building as #204. 1401 Jones #202 is back at $4,700 from Nov 14. Channel #432 (Jan 1) went up to $5,489. Five came down, including the Bernal 2BR view flat a day after it was posted.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-28T18:40:14Z",
   "goneCount": 0,
   "newCount": 1,
