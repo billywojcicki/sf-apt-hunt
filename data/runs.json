@@ -1,6 +1,46 @@
 [
  {
   "approx": false,
+  "at": "2026-10-30T16:04:10Z",
+  "goneCount": 1,
+  "newCount": 0,
+  "sources": [
+   {
+    "d": "8 searches (499 posts, 128 new), 21 read in full, 5 in-window rechecks; no block. Skipped four Inner Richmond and Potrero 2BR/2BA \"condos\" at $3,700 to $4,400 written like for-sale listings, as likely scams. Noe Valley 1BR at 3618 22nd St starts Dec 5, just before the window.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "655 Stockton #202 and Jordan Ave back with no date; 2055 Sacramento #404 reposted at $5,600.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#432 Jan 1 down to $5,439.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "The Brady, Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#00L-504 Dec 15 quote now $4,500.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "#1-420 $5,177.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   }
+  ],
+  "summary": "Back on the market: 655 Stockton #202 (you passed) relisted with no date at $5,540, down $300, and Jordan Ave near California relisted the same day it came down. 2055 Sacramento #404 (passed) was reposted at $5,600 with no date. 736 San Jose Ave (3BR, Dec 18) came down. No new listings met the criteria.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-29T15:21:41Z",
   "goneCount": 5,
   "newCount": 1,
