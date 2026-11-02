@@ -1,6 +1,51 @@
 [
  {
   "approx": false,
+  "at": "2026-11-02T14:25:24Z",
+  "goneCount": 5,
+  "newCount": 3,
+  "sources": [
+   {
+    "d": "8 searches plus 2 rechecks of the January and December queries (527 posts, 277 new over the weekend), 24 read in full, 19 rechecks of no-date and in-window listings; no block. Skipped a $4,900 3BR Pac Heights Victorian (2239 Webster) and a template-filler 3BR as likely scams. Rechecks of listings starting before Dec 15 skipped to stay near the daily page limit.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "736 San Jose Ave back with Dec 18. Price drops on reposts of 655 Stockton #202, 1395 Golden Gate #204 and 252 9th St; no later dates on passed ones.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "No change for your window; #432 still $5,439 from Jan 1.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "New #D-801 2BR 911 ft\u00b2 $5,282 from Dec 9.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Chorus #0442 1BR $4,964 Dec 8; Strata #330 1BR 650 ft\u00b2 $5,570 Dec 19.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Unit list read; the Dec 15 quote did not load. New #0T2-503 680 ft\u00b2 opens Dec 9 from $4,538.",
+    "n": "Avalon at Mission Bay",
+    "st": "partial"
+   },
+   {
+    "d": "#1-420 $5,169.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   }
+  ],
+  "summary": "Back on the market: 736 San Jose Ave, the 3BR starting Dec 18, relisted Nov 1. New in your window: Strata #330 in Mission Bay, 1BR 650 ft\u00b2, $5,570 from Dec 19. New with no date: 56 Varennes #52 (North Beach 2BR, 850 ft\u00b2) and 845 California #101 (Nob Hill 1BR, 747 ft\u00b2). Brady and Chorus each added a unit starting Dec 8 to 9. 655 Stockton #202 down to $5,240; 252 9th St down to $4,495. Five came down, including 1800 Franklin.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-10-30T16:04:10Z",
   "goneCount": 1,
   "newCount": 0,
