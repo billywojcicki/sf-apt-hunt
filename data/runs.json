@@ -1,6 +1,51 @@
 [
  {
   "approx": false,
+  "at": "2026-11-22T20:39:25Z",
+  "goneCount": 13,
+  "newCount": 5,
+  "sources": [
+   {
+    "d": "8 searches (516 posts, 471 new since Nov 2), 22 read in full, 23 rechecks; no block. Many good units start Dec 1, two weeks before your window: a Valencia 1BR with W/D and garage ($4,395), a Noe Valley 2BR with W/D ($4,750) and a 1,000 ft\u00b2 Corona Heights 1BR ($4,995).",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "Reposts at lower prices: 845 California #101 $4,140 (was $4,900), 1395 Golden Gate #204 $4,600 (was $5,440) and #207 $4,140, 106 Sanchez $5,300. No passed listing came back with a later date.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "Unit specials: new #719 Dec 15 $5,115; #432 Jan 1 down to $4,956.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "#A-625 2BR 1,014 ft\u00b2 $5,393 from Dec 23.",
+    "n": "The Brady (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Chorus #0739 1BR $4,969 Dec 15; Strata #330 down to $5,302; Venue #611 1BR $5,406 Dec 16.",
+    "n": "Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "Unit list read; the Dec 15 quote did not load. #00L-107 1BR 967 ft\u00b2 $4,998 from Dec 21.",
+    "n": "Avalon at Mission Bay",
+    "st": "partial"
+   },
+   {
+    "d": "Prices down about $250; #1-420 $4,907; 2BR #2-247 $5,979 from Dec 22.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   }
+  ],
+  "summary": "First refresh since Nov 2, and Mission Bay prices are down with unit specials. New in your window: Channel #719 (758 ft\u00b2, $5,115, Dec 15), Venue #611 (1BR, Dec 16), 233 Mississippi (Potrero Hill 2BR/2BA with a big deck, $5,400, Dec 15), 636 Lyon #A (NoPa 2BR with W/D, $5,285, Dec 16) and 491 Gates (Bernal 3BR house, $5,995, Dec 22). The Brady, Chorus and Avalon each now have a unit starting in your window. 736 San Jose Ave is still listed for Dec 18. Thirteen listings came down, including both furnished Valencia 2BRs that started Jan 1.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-11-02T14:25:24Z",
   "goneCount": 5,
   "newCount": 3,
