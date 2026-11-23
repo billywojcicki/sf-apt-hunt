@@ -1,6 +1,46 @@
 [
  {
   "approx": false,
+  "at": "2026-11-23T14:42:52Z",
+  "goneCount": 5,
+  "newCount": 3,
+  "sources": [
+   {
+    "d": "8 searches (521 posts, 55 new since yesterday), 24 read in full, 5 rechecks (all gone); no block. Most new posts were available now, Civic Center or Mission St.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "No passed or gone listing came back.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "No change: #719 Dec 15 $5,115, #432 Jan 1 $4,956.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "No change to in-window units.",
+    "n": "The Brady, Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#00L-107 down to $4,980 (Dec 21).",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "New #2-245 1BR 739 ft\u00b2 $5,227 from Jan 30.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   }
+  ],
+  "summary": "Quiet day. New: a 1,000 ft\u00b2 Bellaire Tower 1BR on top of Russian Hill ($5,995, no date), a 3BR house with W/D and garage in Midtown Terrace for Dec 15 ($6,000, outside your areas), and a 665 ft\u00b2 1BR at California and 16th ($3,695, no date). Avalon #00L-107 dipped to $4,980. Five older listings came down, including the Page St 2BR duplex and 1675 Clay. Mission Bay watchlist otherwise unchanged.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-11-22T20:39:25Z",
   "goneCount": 13,
   "newCount": 5,
