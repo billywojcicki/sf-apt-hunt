@@ -1,6 +1,46 @@
 [
  {
   "approx": false,
+  "at": "2026-11-25T18:35:00Z",
+  "goneCount": 1,
+  "newCount": 5,
+  "sources": [
+   {
+    "d": "8 searches (502 posts, 292 new since Nov 23 in a big pre-holiday repost wave), 35 read in full, 1 recheck; no block. Most new posts were available now or in excluded areas.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "1 Mallorca Way #302 and 175 Bluxome #107 relisted, both available now. 736 San Jose and 491 Gates reposted with the same dates.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#719 up $40 to $5,155; new #113 948 ft\u00b2 $5,242 from Jan 28.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "Little change; Strata adds #632 1BR $5,851 from Dec 30.",
+    "n": "The Brady, Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "New 2BR #00M-119 1,466 ft\u00b2 $5,970 from Dec 21; new 1BR #00H-1013 $4,795 from Jan 5.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "Prices down about $60; new 2BR #1-337 $5,869 from Dec 26.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   }
+  ],
+  "summary": "New in your window: 377 Laidley St in Glen Park (2BR, 1,100 ft\u00b2, deck with views, $5,400, Dec 28; showing Sun Nov 29 at 11:45), a top-floor 1BR with a deck at Union and Steiner ($4,895, Dec 15), and Avalon #00M-119 (2BR, 1,466 ft\u00b2, $5,970, Dec 21). Also new with no date: a 1,760 ft\u00b2 Potrero Hill loft ($5,500) and a 700 ft\u00b2 Marina 1BR off Chestnut ($5,495). Back on Craigslist but available now: 1 Mallorca Way #302 and 175 Bluxome #107 (now $4,695). MB360 adds a 2BR at $5,869 from Dec 26. 5431 California came down.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-11-23T14:42:52Z",
   "goneCount": 5,
   "newCount": 3,
