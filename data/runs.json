@@ -1,6 +1,46 @@
 [
  {
   "approx": false,
+  "at": "2026-11-27T23:13:26Z",
+  "goneCount": 2,
+  "newCount": 1,
+  "sources": [
+   {
+    "d": "8 searches (495 posts, 162 new since Nov 25), 14 read in full, 3 rechecks; no block. Most new posts were reposts, available now, or Dec 1 starts.",
+    "n": "Craigslist",
+    "st": "ok"
+   },
+   {
+    "d": "No passed or gone listing came back. 736 San Jose and 491 Gates reposted again with the same dates.",
+    "n": "Comeback check",
+    "st": "ok"
+   },
+   {
+    "d": "#719 unchanged at $5,155; #113 up to $5,512.",
+    "n": "Channel Mission Bay (Apartments.com)",
+    "st": "ok"
+   },
+   {
+    "d": "Brady #A-625 down to $5,370, new #A-417 2BR Jan 8; others unchanged.",
+    "n": "The Brady, Chorus, Strata, Venue (SightMap)",
+    "st": "ok"
+   },
+   {
+    "d": "#00M-119 2BR up $30 to $6,000; #00L-107 unchanged.",
+    "n": "Avalon at Mission Bay",
+    "st": "ok"
+   },
+   {
+    "d": "No change.",
+    "n": "MB360 (Essex)",
+    "st": "ok"
+   }
+  ],
+  "summary": "Quiet holiday run. New: a top-floor 2BR at 3014 Clay St in Presidio Heights (925 ft\u00b2, $5,595, coming soon, no date yet). The Brady dropped #A-625 to $5,370 and added a second in-window 2BR (#A-417, $5,715, Jan 8). Avalon #00M-119 ticked up to $6,000. Skipped a $3,200 post for 1598 Bay St #104 that looks like a scam. The Powell near Bay top-floor flat and the furnished 29th St place came down. Showings this weekend: 491 Gates Sun 12:45, 377 Laidley Sun 11:45.",
+  "title": "Manual refresh"
+ },
+ {
+  "approx": false,
   "at": "2026-11-25T18:35:00Z",
   "goneCount": 1,
   "newCount": 5,
